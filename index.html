@@ -1,110 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Lefaa Photography</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>Lefaa Photography</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --bg: #0b1b24;
-  --text: #f2f2f2;
-  --muted: #bfc6cc;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-* { box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0b1b24;
+      color: white;
+    }
 
-body {
-  margin: 0;
-  font-family: Inter, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
+    header {
+      height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.6)),
+        url('assets/img/hero.jpg') center / cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
 
-/* NAV */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 1.2rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  z-index: 10;
-  background: linear-gradient(to bottom, rgba(0,0,0,.6), transparent);
-}
+    nav {
+      position: absolute;
+      top: 30px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
 
-nav a {
-  color: var(--text);
-  text-decoration: none;
-  margin-left: 1.5rem;
-  font-size: .85rem;
-  letter-spacing: .15em;
-}
+    nav a {
+      color: white;
+      text-decoration: none;
+      opacity: 0.8;
+    }
 
-/* HERO */
-header {
-  height: 100vh;
-  background: url("assets/img/hero.jpg") center / cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-}
+    nav a:hover {
+      opacity: 1;
+    }
 
-header h1 {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  margin-bottom: 1rem;
-}
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
 
-header p {
-  max-width: 600px;
-  color: var(--muted);
-  font-size: 1rem;
-}
-
-/* SECTION */
-section {
-  padding: 5rem 2rem;
-  max-width: 1400px;
-  margin: auto;
-}
-
-/* MASONRY */
-.gallery {
-  columns: 3 280px;
-  column-gap: 1.2rem;
-}
-
-.gallery img {
-  width: 100%;
-  margin-bottom: 1.2rem;
-  border-radius: 4px;
-  break-inside: avoid;
-  transition: transform .4s ease, opacity .4s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.02);
-  opacity: .9;
-}
-
-/* FOOTER */
-footer {
-  padding: 3rem 2rem;
-  text-align: center;
-  font-size: .8rem;
-  color: var(--muted);
-}
-</style>
+    p {
+      max-width: 600px;
+      font-size: 1.1rem;
+      opacity: 0.85;
+      line-height: 1.6;
+    }
+  </style>
 </head>
 
 <body>
 
-<nav>
-  <strong>Lefaa</strong>
-  <div>
-    <a hre
+  <nav>
+    <a href="#">HOME</a>
+    <a href="#">STORIES</a>
+    <a href="#">ABOUT</a>
+    <a href="#">CONTACT</a>
+  </nav>
+
+  <header>
+    <h1>Lefaa Photography</h1>
+    <p>
+      Surf stories told through light, movement, and silence.
+      Where the ocean breathes and moments disappear.
+    </p>
+  </header>
+
+</body>
+</html>
