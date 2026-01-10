@@ -9,9 +9,9 @@
 
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
@@ -20,71 +20,40 @@
       color: white;
     }
 
-    header {
+    .hero {
       height: 100vh;
       background:
-        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.6)),
-        url('assets/img/hero.jpg') center / cover no-repeat;
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("assets/img/hero.jpg") center / cover no-repeat;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 2rem;
-    }
-
-    nav {
-      position: absolute;
-      top: 30px;
-      width: 100%;
-      display: flex;
       justify-content: center;
-      gap: 40px;
-      font-size: 14px;
-      letter-spacing: 2px;
+      text-align: center;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      opacity: 0.8;
-    }
-
-    nav a:hover {
-      opacity: 1;
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
+    .hero h1 {
+      font-size: 4rem;
       font-weight: 600;
       margin-bottom: 1rem;
     }
 
-    p {
-      max-width: 600px;
-      font-size: 1.1rem;
-      opacity: 0.85;
-      line-height: 1.6;
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      opacity: 0.9;
     }
   </style>
 </head>
 
 <body>
-
-  <nav>
-    <a href="#">HOME</a>
-    <a href="#">STORIES</a>
-    <a href="#">ABOUT</a>
-    <a href="#">CONTACT</a>
-  </nav>
-
-  <header>
-    <h1>Lefaa Photography</h1>
-    <p>
-      Surf stories told through light, movement, and silence.
-      Where the ocean breathes and moments disappear.
-    </p>
-  </header>
-
+  <section class="hero">
+    <div>
+      <h1>Lefaa Photography</h1>
+      <p>
+        Surf stories told through light, movement, and silence.
+        Where the ocean breathes and moments disappear.
+      </p>
+    </div>
+  </section>
 </body>
 </html>
