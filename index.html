@@ -1,109 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lefaa Photography – Surf Stories</title>
-  <meta name="description" content="Surf photography and ocean storytelling by Lefaa Photography. Waves, silence, and movement." />
+<meta charset="UTF-8">
+<title>Lefaa Photography</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Inter, sans-serif;
-      background: #0b1b24;
-      color: #f2f2f2;
-      line-height: 1.7;
-    }
-    header {
+<style>
+:root {
+  --bg: #0b1b24;
+  --text: #f2f2f2;
+  --muted: #bfc6cc;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+  background: linear-gradient(to bottom, rgba(0,0,0,.6), transparent);
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-size: .85rem;
+  letter-spacing: .15em;
+}
+
+/* HERO */
+header {
   height: 100vh;
+  background: url("assets/img/hero.jpg") center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 2rem;
-
-  background: url('assets/img/DSC02591.JPG') center / cover no-repeat;
-
 }
 
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-    }
-    h1 {
-      font-family: "Playfair Display", serif;
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    p {
-      max-width: 600px;
-      margin: auto;
-      font-size: 1.1rem;
-      opacity: 0.85;
-    }
-    nav {
-      position: absolute;
-      top: 20px;
-      width: 100%;
-      text-align: center;
-    }
-    nav a {
-      color: #f2f2f2;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
-      opacity: 0.8;
-    }
-    section {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    footer {
-      padding: 2rem;
-      text-align: center;
-      font-size: 0.8rem;
-      opacity: 0.6;
-    }
-  </style>
+header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+header p {
+  max-width: 600px;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* SECTION */
+section {
+  padding: 5rem 2rem;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* MASONRY */
+.gallery {
+  columns: 3 280px;
+  column-gap: 1.2rem;
+}
+
+.gallery img {
+  width: 100%;
+  margin-bottom: 1.2rem;
+  border-radius: 4px;
+  break-inside: avoid;
+  transition: transform .4s ease, opacity .4s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.02);
+  opacity: .9;
+}
+
+/* FOOTER */
+footer {
+  padding: 3rem 2rem;
+  text-align: center;
+  font-size: .8rem;
+  color: var(--muted);
+}
+</style>
 </head>
 
 <body>
 
 <nav>
-  <a href="#">HOME</a>
-  <a href="#">STORIES</a>
-  <a href="#">ABOUT</a>
-  <a href="#">CONTACT</a>
-</nav>
-
-<header>
+  <strong>Lefaa</strong>
   <div>
-    <h1>Lefaa Photography</h1>
-    <p>
-      Surf stories told through light, movement, and silence.  
-      Where the ocean breathes and moments disappear.
-    </p>
-  </div>
-</header>
-
-<section>
-  <h2>Surf Storytelling</h2>
-  <p>
-    I photograph the space between waves.  
-    Dawn patrols, empty lineups, and fleeting moments  
-    that only exist once.
-  </p>
-</section>
-
-<footer>
-  © 2026 Lefaa Photography · lefaaphotography.com
-</footer>
-
-</body>
-</html>
+    <a hre
