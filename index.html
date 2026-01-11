@@ -4,299 +4,74 @@
   <meta charset="UTF-8" />
   <title>Lefaa Photography</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     :root{
-      --purple-dark: #1a0f2b;
-      --purple-mid:  #2a1b3d;
-      --purple-soft: #4b2f6f;
+      /* Brand mood */
+      --purple: #2a1b3d;
+      --purple2:#1a0f2b;
 
-      --panel: rgba(255,255,255,0.06);
+      /* Overlay on top of background image */
+      --overlayA: rgba(26,15,43,0.62);
+      --overlayB: rgba(26,15,43,0.90);
+
+      /* Glass panels */
+      --panel: rgba(0,0,0,0.34);
       --border: rgba(255,255,255,0.14);
-      --muted: rgba(255,255,255,0.86);
-      --muted2: rgba(255,255,255,0.74);
-      --shadow: 0 16px 34px rgba(0,0,0,0.26);
+      --text: rgba(255,255,255,0.94);
+      --muted: rgba(255,255,255,0.78);
+      --shadow: 0 18px 40px rgba(0,0,0,0.35);
     }
 
-    body {
+    /* FULL SITE BACKGROUND IMAGE */
+    body{
       font-family: 'Inter', sans-serif;
-      background:
-        radial-gradient(1200px 700px at 20% -10%, var(--purple-soft), transparent 60%),
-        radial-gradient(900px 600px at 90% 20%, #120a22, transparent 55%),
-        linear-gradient(180deg, var(--purple-mid), var(--purple-dark));
-      color: white;
+      color: var(--text);
       line-height: 1.6;
+
+      /* ✅ Uses your new file name */
+      background:
+        radial-gradient(900px 600px at 15% 10%, rgba(75,47,111,0.30), transparent 60%),
+        radial-gradient(900px 600px at 90% 30%, rgba(18,10,34,0.35), transparent 60%),
+        linear-gradient(var(--overlayA), var(--overlayB)),
+        url("/assets/wave-2.jpg") center / cover no-repeat fixed;
+
+      min-height: 100vh;
     }
 
-    .container {
-      width: min(1100px, 92%);
+    /* Layout */
+    .container{
+      width: min(1120px, 92%);
       margin: 0 auto;
     }
 
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      background:
-        radial-gradient(1200px 700px at 50% 80%, rgba(18,10,34,0.12), rgba(18,10,34,0.92)),
-        linear-gradient(rgba(0,0,0,0.20), rgba(0,0,0,0.60)),
-        url("/assets/hero.jpg.JPG") center / cover no-repeat;
-      display: grid;
-      place-items: center;
-      padding: 4rem 0;
+    /* Top Nav (premium + simple) */
+    .nav{
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(0,0,0,0.20);
+      border-bottom: 1px solid rgba(255,255,255,0.10);
     }
 
-    .hero-card {
-      width: min(920px, 92%);
-      padding: 2.2rem;
-      border-radius: 18px;
-      background: rgba(0,0,0,0.30);
-      backdrop-filter: blur(7px);
-      border: 1px solid rgba(255,255,255,0.14);
-      text-align: center;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-    }
-
-    /* LOGO */
-    .logo {
-      width: 110px;
-      height: 110px;
-      margin: 0 auto 14px auto;
-      display: block;
-      object-fit: contain;
-      filter: drop-shadow(0 10px 18px rgba(0,0,0,0.35));
-    }
-
-    .hero h1 {
-      font-size: clamp(2.4rem, 6vw, 4.2rem);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.8rem;
-    }
-
-    .hero p {
-      font-size: 1.06rem;
-      max-width: 900px;
-      margin: 0 auto 1.2rem auto;
-      color: rgba(255,255,255,0.92);
-    }
-
-    .hero-meta {
+    .nav-inner{
+      height: 68px;
       display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand{
+      display: flex;
+      align-items: center;
       gap: 10px;
-      justify-content: center;
-      flex-wrap: wrap;
-      opacity: 0.92;
-      font-size: 0.95rem;
-      margin-bottom: 14px;
     }
 
-    .pill {
-      padding: 0.35rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(0,0,0,0.18);
-    }
-
-    /* CTA */
-    .cta-row {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 0.75rem 1.1rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.20);
-      background: rgba(255,255,255,0.12);
-      font-weight: 600;
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,0.18);
-    }
-
-    .btn.primary {
-      background: rgba(255,255,255,0.22);
-    }
-
-    /* STORY */
-    .story {
-      padding: 80px 0 30px 0;
-    }
-
-    .kicker {
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 0.82rem;
-      opacity: 0.82;
-      margin-bottom: 14px;
-    }
-
-    .story h2 {
-      font-size: clamp(1.6rem, 3vw, 2.3rem);
-      margin-bottom: 14px;
-    }
-
-    .story-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 22px;
-      margin-top: 22px;
-    }
-
-    .quote {
-      background: rgba(255,255,255,0.06);
-      border-left: 3px solid rgba(255,255,255,0.30);
-      padding: 16px;
-      border-radius: 14px;
-      font-style: italic;
-    }
-
-    /* GALLERY */
-    .gallery {
-      padding: 40px 0 90px 0;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 18px;
-    }
-
-    figure.card {
-      grid-column: span 6;
-      border-radius: 18px;
-      overflow: hidden;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: var(--shadow);
-    }
-
-    figure.card img {
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    figure.card:hover img {
-      transform: scale(1.03);
-    }
-
-    figcaption {
-      padding: 14px 16px;
-    }
-
-    .cap-title {
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .cap-sub {
-      opacity: 0.85;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 900px) {
-      .story-grid { grid-template-columns: 1fr; }
-      figure.card { grid-column: span 12; }
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-card">
-
-      <!-- LOGO -->
-      <img class="logo" src="/assets/logo.png" alt="Lefaa Photography logo">
-
-      <h1>Lefaa Photography</h1>
-
-      <p>
-        Surf photography & film from <strong>Safi</strong>.
-        Created by <strong>Oussama</strong> & <strong>Ali</strong>,
-        documenting Pass Leaf — the wave that brings surfers from all over the world.
-      </p>
-
-      <div class="hero-meta">
-        <span class="pill">Pass Leaf • Safi</span>
-        <span class="pill">Surf • Ocean Culture</span>
-        <span class="pill">Prints • Digital Photos</span>
-      </div>
-
-      <div class="cta-row">
-        <div class="btn primary">Browse Photos</div>
-        <div class="btn">Buy Prints</div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- STORY -->
-  <section class="story">
-    <div class="container">
-      <div class="kicker">Our approach</div>
-      <h2>Every set is a story — light, timing, and the people inside the wave.</h2>
-
-      <div class="story-grid">
-        <p>
-          Lefaa was born in Safi. Oussama and Ali are surfers first — photographers second.
-          They know the wind, the tide, and the exact second when Pass Leaf opens.
-          This is not tourism photography. This is home.
-        </p>
-
-        <div class="quote">
-          “People travel far for this wave. We’re here every day — ready when it breaks.”
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section class="gallery">
-    <div class="container">
-      <div class="grid">
-
-        <figure class="card">
-          <img src="/assets/surf-barrel.jpg.JPG" alt="Surf barrel">
-          <figcaption>
-            <div class="cap-title">Inside the Barrel</div>
-            <div class="cap-sub">Clean walls, heavy water, perfect timing.</div>
-          </figcaption>
-        </figure>
-
-        <figure class="card">
-          <img src="/assets/surf-lineup.jpg.JPG" alt="Surf lineup">
-          <figcaption>
-            <div class="cap-title">The Lineup</div>
-            <div class="cap-sub">Locals and travelers waiting for the same set.</div>
-          </figcaption>
-        </figure>
-
-        <figure class="card">
-          <img src="/assets/surf-paddling.jpg.JPG" alt="Surf paddling">
-          <figcaption>
-            <div class="cap-title">The Paddle</div>
-            <div class="cap-sub">Before the drop — focus and commitment.</div>
-          </figcaption>
-        </figure>
-
-      </div>
-    </div>
-  </section>
-
-</body>
-</html>
+    .brand img{
+      wi
