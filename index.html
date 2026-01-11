@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>Lefaa Photography أ 54</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -12,9 +13,8 @@
 
     :root{
       --bg: #0b1b24;
-      --text: rgba(255,255,255,0.95);
+      --text: rgba(255,255,255,0.96);
       --muted: rgba(255,255,255,0.78);
-      --muted2: rgba(255,255,255,0.66);
       --border: rgba(255,255,255,0.14);
     }
 
@@ -30,7 +30,8 @@
       margin: 0 auto;
     }
 
-    /* HERO (wave must stay visible) */
+    /* ================= HERO ================= */
+
     .hero{
       position: relative;
       min-height: 100vh;
@@ -44,47 +45,43 @@
       inset:0;
       background:
         radial-gradient(900px 520px at 22% 22%, rgba(0,0,0,0.55), transparent 70%),
-        linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.16));
+        linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.14));
       pointer-events:none;
     }
 
-    /* top bar */
+    /* Top bar */
     .topbar{
       position:absolute;
       top:0;
       left:0;
       right:0;
-      z-index: 3;
-      padding: 18px 0;
+      z-index:3;
+      padding: 20px 0;
     }
 
     .topbar-inner{
       display:flex;
-      align-items:flex-start;
       justify-content: space-between;
-      gap: 16px;
+      align-items:flex-start;
     }
 
-    /* ✅ Bigger logo top-right */
+    /* ✅ BIGGER LOGO */
     .logo{
-      width: 100px;
-      height: 100px;
+      width: 120px;
+      height: 120px;
       object-fit: contain;
-      display:block;
       filter: drop-shadow(0 10px 18px rgba(0,0,0,0.35));
-      opacity: 0.98;
     }
 
-    /* hero content (top-left) */
+    /* Hero text */
     .hero-content{
       position: relative;
       z-index: 2;
-      padding: 92px 0 56px 0;
+      padding: 110px 0 60px 0;
     }
 
     .hero-stack{
-      max-width: 640px;
-      padding-top: 22px;
+      max-width: 720px;
     }
 
     .kicker{
@@ -92,337 +89,277 @@
       letter-spacing: 0.14em;
       font-size: 0.82rem;
       opacity: 0.86;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
+    /* ✅ BIG TITLE */
     h1{
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      margin-bottom: 12px;
+      font-size: clamp(3.6rem, 8.5vw, 6.6rem);
+      line-height: 1.0;
+      letter-spacing: -0.05em;
+      margin-bottom: 14px;
     }
 
     .lead{
-      font-size: 1.06rem;
+      font-size: 1.08rem;
       color: rgba(255,255,255,0.90);
-      margin-bottom: 16px;
+      margin-bottom: 18px;
+      max-width: 640px;
     }
 
     .meta{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
-      margin-top: 8px;
     }
 
     .pill{
-      padding: 0.34rem 0.72rem;
+      padding: 0.36rem 0.74rem;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.18);
       background: rgba(0,0,0,0.18);
-      color: rgba(255,255,255,0.88);
       font-size: 0.94rem;
       backdrop-filter: blur(6px);
     }
 
     .scroll-hint{
       position:absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 18px;
-      z-index: 3;
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.82);
-      opacity: 0.95;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(0,0,0,0.18);
-      backdrop-filter: blur(6px);
+      left:50%;
+      transform:translateX(-50%);
+      bottom:18px;
+      font-size:0.9rem;
+      opacity:0.85;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.16);
+      background:rgba(0,0,0,0.18);
     }
 
-    /* ✅ NEW SECTION: OUSSAMA FEATURE (first after hero) */
+    /* ================= FEATURE (OUSSAMA) ================= */
+
     .feature{
-      padding: 60px 0 10px 0;
-      background: #0b1b24;
+      padding: 70px 0 20px 0;
     }
 
     .feature-grid{
       display:grid;
       grid-template-columns: 1fr 1fr;
-      gap: 22px;
-      align-items: center;
+      gap: 28px;
+      align-items:center;
     }
 
     .feature-card{
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.04);
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.02);
     }
 
     .feature-card img{
-      width: 100%;
-      height: 520px;
-      object-fit: cover;
+      width:100%;
+      height:520px;
+      object-fit:cover;
       display:block;
     }
 
-    .feature-text .kicker{
-      margin-bottom: 10px;
-    }
-
     .feature-text h2{
-      font-size: clamp(1.5rem, 2.6vw, 2.15rem);
-      letter-spacing: -0.02em;
-      margin-bottom: 10px;
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      margin-bottom: 12px;
+      letter-spacing:-0.02em;
     }
 
     .feature-text p{
       color: rgba(255,255,255,0.86);
-      font-size: 1.02rem;
+      font-size:1.02rem;
+      max-width: 560px;
     }
 
-    /* STORY SECTION */
+    /* ================= STORY ================= */
+
     .story{
-      padding: 58px 0 26px 0;
-      background: #0b1b24;
-    }
-
-    .story h2{
-      font-size: clamp(1.6rem, 3vw, 2.35rem);
-      letter-spacing: -0.02em;
-      margin-bottom: 14px;
+      padding: 60px 0 30px 0;
     }
 
     .story-grid{
       display:grid;
       grid-template-columns: 1.2fr 0.8fr;
-      gap: 22px;
-      align-items:start;
-      margin-top: 22px;
-    }
-
-    .story p{
-      color: rgba(255,255,255,0.86);
-      font-size: 1.02rem;
+      gap:22px;
+      margin-top:22px;
     }
 
     .quote{
-      border-left: 3px solid rgba(255,255,255,0.22);
-      padding-left: 16px;
-      font-style: italic;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 14px;
-      padding: 16px;
-      color: rgba(255,255,255,0.90);
+      border-left:3px solid rgba(255,255,255,0.22);
+      padding:16px;
+      font-style:italic;
+      background:rgba(255,255,255,0.04);
+      border-radius:14px;
     }
 
-    /* GALLERY */
+    /* ================= GALLERY ================= */
+
     .gallery{
-      padding: 40px 0 84px 0;
-      background: #0b1b24;
-    }
-
-    .gallery-header{
-      display:flex;
-      align-items:end;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-    }
-
-    .gallery-header h3{
-      font-size: 1.35rem;
-      letter-spacing: -0.01em;
-    }
-
-    .gallery-header p{
-      max-width: 560px;
-      color: rgba(255,255,255,0.80);
-      font-size: 0.98rem;
+      padding: 40px 0 90px 0;
     }
 
     .grid{
       display:grid;
       grid-template-columns: repeat(12, 1fr);
-      gap: 18px;
+      gap:18px;
     }
 
     figure.card{
       grid-column: span 6;
-      border-radius: 18px;
-      overflow: hidden;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.10);
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.02);
     }
 
     figure.card img{
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
+      width:100%;
+      height:360px;
+      object-fit:cover;
       display:block;
-      transition: transform 240ms ease;
+      transition:transform .25s ease;
     }
 
     figure.card:hover img{
-      transform: scale(1.03);
+      transform:scale(1.03);
     }
 
     figcaption{
-      padding: 14px 16px 16px 16px;
+      padding:14px 16px 16px;
     }
 
-    .cap-title{
-      font-weight: 600;
-      margin-bottom: 4px;
-      letter-spacing: -0.01em;
-    }
+    .cap-title{ font-weight: 600; margin-bottom: 4px; }
+    .cap-sub{ color: rgba(255,255,255,0.78); font-size: 0.95rem; }
 
-    .cap-sub{
-      color: rgba(255,255,255,0.78);
-      font-size: 0.95rem;
-    }
+    /* ================= RESPONSIVE ================= */
 
-    /* RESPONSIVE */
-    @media (max-width: 900px){
-      .story-grid{ grid-template-columns: 1fr; }
-      figure.card{ grid-column: span 12; }
-      figure.card img{ height: 320px; }
+    @media (max-width:900px){
+      .feature-grid,
+      .story-grid{ grid-template-columns:1fr; }
 
-      .feature-grid{ grid-template-columns: 1fr; }
+      figure.card{ grid-column:span 12; }
+
+      h1{ font-size: clamp(2.8rem, 9vw, 4.0rem); }
+
+      .logo{ width:90px; height:90px; }
+
       .feature-card img{ height: 420px; }
-
-      .logo{ width: 84px; height: 84px; }
-      .hero-content{ padding: 86px 0 56px 0; }
-      .hero-stack{ max-width: 92%; }
     }
   </style>
 </head>
 
 <body>
-  <!-- HERO -->
-  <header class="hero">
-    <div class="topbar">
-      <div class="container topbar-inner">
-        <div></div>
-        <img class="logo" src="/assets/logo.png" alt="Lefaa Photography logo">
-      </div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div></div>
+      <img class="logo" src="/assets/logo.png" alt="Lefaa Photography logo">
     </div>
+  </div>
 
-    <div class="hero-content">
-      <div class="container">
-        <div class="hero-stack">
-          <div class="kicker">Safi أ 54 • Rass Lefaa أ 54</div>
-
-          <!-- ✅ H1 now includes أ 54 -->
-          <h1>Lefaa Photography أ 54</h1>
-
-          <p class="lead">
-            Surf photography & film driven by ocean culture.
-            We capture the rhythm of Rass Lefaa — the wave that pulls surfers from around the world to Safi.
-          </p>
-
-          <div class="meta">
-            <span class="pill">Surf • Ocean Culture</span>
-            <span class="pill">Photo + Film</span>
-            <span class="pill">Safi أ 54, Morocco</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="scroll-hint">Scroll ↓</div>
-  </header>
-
-  <!-- ✅ OUSSAMA FEATURE (FIRST AFTER HERO) -->
-  <section class="feature">
+  <div class="hero-content">
     <div class="container">
-      <div class="feature-grid">
-        <div class="feature-card">
-          <!-- IMPORTANT: replace /assets/oussama.jpg with your exact filename -->
-          <img src="/assets/oussama.jpg" alt="Oussama — photographer and surfer from Safi">
-        </div>
+      <div class="hero-stack">
+        <div class="kicker">Safi أ 54 • Rass Lefaa أ 54</div>
 
-        <div class="feature-text">
-          <div class="kicker">The photographer</div>
-          <h2>Oussama — surfer, filmmaker, and wave storyteller.</h2>
-          <p>
-            From Safi, shaped by salt and wind, Oussama learned the ocean as a language.
-            He doesn’t just shoot surfing — he captures what it feels like: the breath before the paddle,
-            the silence in the lineup, and the seconds that become memories.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+        <h1>Lefaa Photography أ 54</h1>
 
-  <!-- STORY -->
-  <section class="story">
-    <div class="container">
-      <div class="kicker">Our approach</div>
-      <h2>Every set is a story — light, timing, and the people inside the wave.</h2>
-
-      <div class="story-grid">
-        <p>
-          From Safi, shaped by salt and wind, Oussama and Ali are brothers by Ocean and by soul.
-          Raised where the waves of Essaouiria and Safi Beach and Rass Lefaa carve stories into stone,
-          they learned early that the ocean is not a destination but a language.
-          <br><br>
-          What began at home became a shared vision brought to life through movement, trust, and time spent chasing the horizon together.
-          Rooted in Safi and carried outward, their journey now flows across Europe, from the raw Atlantic energy to the soft light of Tuscany.
-          <br><br>
-          They are wave storytellers, traveling with intention, turning fleeting moments into lasting memories.
-          Guided by water, instinct, and connection, they do not simply ride waves but preserve the feeling they leave behind.
-          <br><br>
-          Built by <strong>Oussama</strong> & <strong>Ali</strong> — photographers and surfers from Safi أ 54 — Lefaa exists to turn sessions into memories you can keep.
+        <p class="lead">
+          Surf photography & film driven by ocean culture.
+          We capture the rhythm of Rass Lefaa — the wave that pulls surfers from around the world to Safi.
         </p>
 
-        <div class="quote">
-          “Strong images come from strong rhythm: the ocean sets the pace — we frame it.”
+        <div class="meta">
+          <span class="pill">Surf • Ocean Culture</span>
+          <span class="pill">Photo + Film</span>
+          <span class="pill">Safi أ 54, Morocco</span>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- GALLERY -->
-  <section class="gallery">
-    <div class="container">
-      <div class="gallery-header">
-        <div>
-          <h3>Featured stories</h3>
-          <p>Each wave is a moment that will never return, so we ride it fully..</p>
-        </div>
+  <div class="scroll-hint">Scroll ↓</div>
+</header>
+
+<!-- OUSSAMA FEATURE -->
+<section class="feature">
+  <div class="container">
+    <div class="feature-grid">
+      <div class="feature-card">
+        <!-- ✅ FIXED PATH: matches GitHub exactly -->
+        <img src="/assets/Oussama.JPG" alt="Oussama — photographer and surfer from Safi">
       </div>
 
-      <div class="grid">
-        <figure class="card">
-          <img src="/assets/surf-barrel.jpg.JPG" alt="Surf barrel wave">
-          <figcaption>
-            <div class="cap-title"></div>
-            <div class="cap-sub">We don’t chase waves, we listen to them..</div>
-          </figcaption>
-        </figure>
-
-        <figure class="card">
-          <img src="/assets/surf-lineup.jpg.JPG" alt="Surfers in lineup">
-          <figcaption>
-            <div class="cap-title">The Lineup</div>
-            <div class="cap-sub">Waiting, reading the horizon, choosing the moment.</div>
-          </figcaption>
-        </figure>
-
-        <figure class="card">
-          <img src="/assets/surf-paddling.jpg.JPG" alt="Surfer paddling">
-          <figcaption>
-            <div class="cap-title">The Paddle</div>
-            <div class="cap-sub">Where every story actually starts.</div>
-          </figcaption>
-        </figure>
+      <div class="feature-text">
+        <div class="kicker">The photographer</div>
+        <h2>Oussama — surfer, filmmaker, and wave storyteller.</h2>
+        <p>
+          From Safi, shaped by salt and wind, Oussama learned the ocean as a language.
+          He doesn’t just shoot surfing — he captures what it feels like: the breath before the paddle,
+          the silence in the lineup, and the seconds that become memories.
+        </p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <div class="container">
+    <div class="kicker">Our approach</div>
+    <h2>Every set is a story — light, timing, and the people inside the wave.</h2>
+
+    <div class="story-grid">
+      <p>
+        From Safi, shaped by salt and wind, Oussama and Ali are brothers by Ocean and by soul.
+        Their journey flows from Rass Lefaa outward — carrying Safi’s rhythm to the world.
+        They don’t chase moments; they wait for them.
+        <br><br>
+        Built by <strong>Oussama</strong> & <strong>Ali</strong>, Lefaa exists to turn sessions into memories.
+      </p>
+
+      <div class="quote">
+        “Strong images come from strong rhythm: the ocean sets the pace — we frame it.”
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="container">
+    <div class="grid">
+      <figure class="card">
+        <img src="/assets/surf-barrel.jpg.JPG" alt="Surf barrel wave">
+        <figcaption>
+          <div class="cap-title">Inside the Barrel</div>
+          <div class="cap-sub">We don’t chase waves — we listen to them.</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="/assets/surf-lineup.jpg.JPG" alt="Surfers in lineup">
+        <figcaption>
+          <div class="cap-title">The Lineup</div>
+          <div class="cap-sub">Waiting, reading the horizon, choosing the moment.</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="/assets/surf-paddling.jpg.JPG" alt="Surfer paddling">
+        <figcaption>
+          <div class="cap-title">The Paddle</div>
+          <div class="cap-sub">Where every story actually starts.</div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 </body>
 </html>
