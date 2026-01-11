@@ -10,122 +10,118 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
+    :root{
+      --bg: #0b1b24;
+      --text: rgba(255,255,255,0.95);
+      --muted: rgba(255,255,255,0.78);
+      --border: rgba(255,255,255,0.14);
+      --card: rgba(255,255,255,0.04);
+      --shadow: 0 18px 40px rgba(0,0,0,0.35);
+    }
+
     body{
       font-family: 'Inter', sans-serif;
-      background:#0b1b24;
-      color: rgba(255,255,255,0.95);
-      line-height:1.6;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
 
     .container{
-      width:min(1120px,92%);
-      margin:0 auto;
+      width: min(1120px, 92%);
+      margin: 0 auto;
     }
 
     /* HERO */
     .hero{
-      position:relative;
-      min-height:100vh;
-      background:url("assets/wave-2.jpg") center/cover no-repeat;
-      overflow:hidden;
+      position: relative;
+      min-height: 100vh;
+      background: url("assets/wave-2.jpg") center / cover no-repeat;
+      overflow: hidden;
     }
 
     .hero::before{
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(rgba(0,0,0,0.12),rgba(0,0,0,0.08));
+      background:
+        radial-gradient(900px 520px at 18% 20%, rgba(0,0,0,0.55), transparent 70%),
+        linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.10));
+      pointer-events:none;
     }
 
     .topbar{
       position:absolute;
-      top:0;left:0;right:0;
-      padding:18px 0;
-      z-index:3;
+      top:0; left:0; right:0;
+      z-index: 3;
+      padding: 18px 0;
     }
 
     .topbar-inner{
       display:flex;
-      justify-content:flex-end;
+      justify-content: space-between;
     }
 
     .logo{
-      width:96px;
-      height:96px;
-      object-fit:contain;
-      filter:drop-shadow(0 12px 22px rgba(0,0,0,.45));
+      width: 96px;
+      height: 96px;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 20px rgba(0,0,0,0.42));
     }
 
     .hero-content{
-      position:relative;
-      z-index:2;
-      padding:100px 0 60px;
+      position: relative;
+      z-index: 2;
+      padding: 96px 0 56px 0;
     }
 
-    /* 🔥 UPDATED */
     .hero-stack{
-      max-width:720px;
-      margin-left:auto;
-      padding-left:48px;
-      padding-right:24px;
-      position:relative;
-    }
-
-    .hero-stack::before{
-      content:"";
-      position:absolute;
-      inset:-40px;
-      background:linear-gradient(
-        to left,
-        rgba(0,0,0,0.55),
-        rgba(0,0,0,0.25) 40%,
-        rgba(0,0,0,0.05) 70%,
-        transparent
-      );
-      z-index:-1;
-      border-radius:28px;
+      max-width: 720px;
     }
 
     .kicker{
-      text-transform:uppercase;
-      letter-spacing:.14em;
-      font-size:.82rem;
-      opacity:.85;
-      margin-bottom:10px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.82rem;
+      opacity: 0.86;
+      margin-bottom: 12px;
     }
 
     h1{
-      font-size:clamp(3rem,7vw,5.4rem);
-      line-height:1;
-      letter-spacing:-.05em;
-      white-space:nowrap;
-      margin-bottom:14px;
+      font-size: clamp(3rem, 7vw, 5.4rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      white-space: nowrap;
+      margin-bottom: 12px;
     }
 
     .a54{
-      font-size:.42em;
-      margin-left:12px;
-      opacity:.85;
+      font-size: 0.42em;
+      margin-left: 12px;
+      opacity: 0.9;
     }
 
+    /* VIDEO */
     .hero-video{
-      width:min(640px,100%);
-      aspect-ratio:16/9;
-      border-radius:16px;
-      overflow:hidden;
-      margin-bottom:18px;
+      width: min(640px, 100%);
+      aspect-ratio: 16/9;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
     }
 
-    video{
-      width:100%;
-      height:100%;
-      object-fit:cover;
+    .hero-video video{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .lead{
-      max-width:60ch;
-      opacity:.9;
-      margin-bottom:16px;
+      max-width: 64ch;
+      font-size: 1.08rem;
+      opacity: 0.9;
+      margin-bottom: 16px;
     }
 
     .meta{
@@ -135,62 +131,113 @@
     }
 
     .pill{
-      padding:.34rem .72rem;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.18);
-      background:rgba(0,0,0,.18);
-      font-size:.94rem;
+      padding: 0.34rem 0.72rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,0.18);
+      font-size: 0.94rem;
     }
 
     .scroll-hint{
       position:absolute;
-      bottom:18px;
-      left:50%;
-      transform:translateX(-50%);
-      opacity:.75;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.9rem;
+      opacity: 0.8;
     }
 
     /* FEATURE */
     .feature{
-      padding:72px 0;
+      padding: 72px 0;
     }
 
     .feature-grid{
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:28px;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
       align-items:center;
     }
 
     .feature-card{
-      border-radius:18px;
-      overflow:hidden;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--card);
+      box-shadow: var(--shadow);
     }
 
     .feature-card img{
       width:100%;
       height:520px;
-      object-fit:cover;
+      object-fit: cover;
     }
 
     .label{
-      text-transform:uppercase;
-      letter-spacing:.14em;
-      font-size:.78rem;
-      opacity:.75;
-      margin-bottom:10px;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      opacity: 0.75;
+      margin-bottom: 10px;
     }
 
     .feature h2{
-      font-size:clamp(1.8rem,3vw,2.6rem);
-      margin-bottom:12px;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      margin-bottom: 12px;
     }
 
-    /* RESPONSIVE */
+    /* STORY */
+    .story{
+      padding: 60px 0;
+    }
+
+    .story-grid{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+    }
+
+    .quote{
+      border-left: 3px solid var(--border);
+      padding-left: 16px;
+      font-style: italic;
+      opacity: 0.9;
+    }
+
+    /* GALLERY */
+    .gallery{
+      padding: 60px 0 90px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12,1fr);
+      gap:18px;
+    }
+
+    figure.card{
+      grid-column: span 6;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    figure.card img{
+      width:100%;
+      height:360px;
+      object-fit: cover;
+    }
+
+    figcaption{
+      padding: 14px;
+    }
+
     @media(max-width:900px){
-      .feature-grid{grid-template-columns:1fr;}
-      h1{white-space:normal;}
-      .hero-stack{margin-left:0;padding-left:24px;}
+      .feature-grid,
+      .story-grid{ grid-template-columns:1fr; }
+      figure.card{ grid-column: span 12; }
+      h1{ white-space: normal; }
     }
   </style>
 </head>
@@ -200,6 +247,7 @@
 <header class="hero">
   <div class="topbar">
     <div class="container topbar-inner">
+      <div></div>
       <img src="assets/logo.png" class="logo" alt="Lefaa logo">
     </div>
   </div>
@@ -212,12 +260,19 @@
         <h1>Lefaa Photography <span class="a54">أ 54</span></h1>
 
         <div class="hero-video">
-          <video src="assets/wave%20intro.mp4" autoplay muted loop playsinline></video>
+          <video
+            src="assets/wave%20intro.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata">
+          </video>
         </div>
 
         <p class="lead">
           Surf photography & film driven by ocean culture.
-          Capturing the rhythm of Rass Lefaa.
+          We capture the rhythm of Rass Lefaa — the wave that pulls surfers from around the world to Safi.
         </p>
 
         <div class="meta">
@@ -231,6 +286,55 @@
 
   <div class="scroll-hint">Scroll ↓</div>
 </header>
+
+<section class="feature">
+  <div class="container feature-grid">
+    <div class="feature-card">
+      <img src="assets/Body%20board%20flip.png" alt="Bodyboard flip">
+    </div>
+
+    <div>
+      <div class="label">The Photographer</div>
+      <h2>Oussama — surfer, filmmaker, and wave storyteller.</h2>
+      <p>
+        From Safi, shaped by salt and wind, Oussama captures the instant
+        where motion becomes memory.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="story">
+  <div class="container story-grid">
+    <p>
+      From Safi, shaped by salt and wind, Oussama and Ali are brothers by ocean and by soul.
+      Raised where waves carve stories into stone, they learned the sea is a language.
+    </p>
+
+    <div class="quote">
+      “Strong images come from strong rhythm — the ocean sets the pace.”
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="container grid">
+    <figure class="card">
+      <img src="assets/surf-barrel.jpg.JPG">
+      <figcaption>Inside the barrel</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="assets/surf-lineup.jpg.JPG">
+      <figcaption>The lineup</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="assets/surf-paddling.jpg.JPG">
+      <figcaption>The paddle</figcaption>
+    </figure>
+  </div>
+</section>
 
 </body>
 </html>
