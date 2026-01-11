@@ -14,7 +14,6 @@
       --bg: #0b1b24;
       --text: rgba(255,255,255,0.95);
       --muted: rgba(255,255,255,0.78);
-      --muted2: rgba(255,255,255,0.66);
       --border: rgba(255,255,255,0.14);
       --card: rgba(255,255,255,0.04);
       --shadow: 0 18px 40px rgba(0,0,0,0.35);
@@ -40,7 +39,6 @@
       overflow: hidden;
     }
 
-    /* subtle overlay only for readability */
     .hero::before{
       content:"";
       position:absolute;
@@ -60,30 +58,24 @@
 
     .topbar-inner{
       display:flex;
-      align-items:flex-start;
       justify-content: space-between;
-      gap: 16px;
     }
 
-    /* bigger logo top-right */
     .logo{
       width: 96px;
       height: 96px;
       object-fit: contain;
-      display:block;
       filter: drop-shadow(0 12px 20px rgba(0,0,0,0.42));
-      opacity: 0.98;
     }
 
     .hero-content{
       position: relative;
       z-index: 2;
-      padding: 92px 0 56px 0;
+      padding: 96px 0 56px 0;
     }
 
     .hero-stack{
       max-width: 720px;
-      padding-top: 22px;
     }
 
     .kicker{
@@ -95,395 +87,254 @@
     }
 
     h1{
-      font-size: clamp(3.0rem, 7vw, 5.4rem);
-      line-height: 1.0;
+      font-size: clamp(3rem, 7vw, 5.4rem);
+      line-height: 1;
       letter-spacing: -0.05em;
-      margin-bottom: 10px;
       white-space: nowrap;
+      margin-bottom: 12px;
     }
 
     .a54{
       font-size: 0.42em;
-      font-weight: 600;
-      opacity: 0.9;
       margin-left: 12px;
-      white-space: nowrap;
-      vertical-align: baseline;
+      opacity: 0.9;
     }
 
-    /* ✅ VIDEO STRIP (under title) */
+    /* VIDEO */
     .hero-video{
-      width: min(640px, 92%);
-      aspect-ratio: 16 / 9;
+      width: min(640px, 100%);
+      aspect-ratio: 16/9;
       border-radius: 16px;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(0,0,0,0.22);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.28);
-      backdrop-filter: blur(6px);
-      margin: 12px 0 14px 0;
+      border: 1px solid var(--border);
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
     }
 
     .hero-video video{
       width: 100%;
       height: 100%;
-      display: block;
       object-fit: cover;
-      filter: saturate(1.05) contrast(1.04);
     }
 
     .lead{
-      font-size: 1.08rem;
-      color: rgba(255,255,255,0.90);
-      margin-bottom: 16px;
       max-width: 64ch;
+      font-size: 1.08rem;
+      opacity: 0.9;
+      margin-bottom: 16px;
     }
 
     .meta{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
-      margin-top: 10px;
     }
 
     .pill{
       padding: 0.34rem 0.72rem;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.16);
+      border: 1px solid var(--border);
       background: rgba(0,0,0,0.18);
-      color: rgba(255,255,255,0.88);
       font-size: 0.94rem;
-      backdrop-filter: blur(6px);
     }
 
     .scroll-hint{
       position:absolute;
+      bottom: 18px;
       left: 50%;
       transform: translateX(-50%);
-      bottom: 18px;
-      z-index: 3;
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.82);
-      opacity: 0.95;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(0,0,0,0.18);
-      backdrop-filter: blur(6px);
+      font-size: 0.9rem;
+      opacity: 0.8;
     }
 
-    section{ background: var(--bg); }
-
-    /* OUSSAMA FEATURE */
+    /* FEATURE */
     .feature{
-      padding: 72px 0 18px 0;
+      padding: 72px 0;
     }
 
     .feature-grid{
       display:grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1fr 1fr;
       gap: 26px;
-      align-items: start;
+      align-items:center;
     }
 
     .feature-card{
       border-radius: 18px;
       overflow: hidden;
+      border: 1px solid var(--border);
       background: var(--card);
-      border: 1px solid rgba(255,255,255,0.10);
       box-shadow: var(--shadow);
     }
 
     .feature-card img{
-      width: 100%;
-      height: 520px;
+      width:100%;
+      height:520px;
       object-fit: cover;
-      display:block;
-      transform: translateZ(0);
-    }
-
-    .feature-text{
-      padding-top: 6px;
     }
 
     .label{
       text-transform: uppercase;
-      letter-spacing: 0.14em;
       font-size: 0.78rem;
-      color: rgba(255,255,255,0.72);
+      letter-spacing: 0.14em;
+      opacity: 0.75;
+      margin-bottom: 10px;
+    }
+
+    .feature h2{
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
       margin-bottom: 12px;
-    }
-
-    .feature-text h2{
-      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
-      line-height: 1.12;
-      letter-spacing: -0.03em;
-      margin-bottom: 12px;
-    }
-
-    .feature-text p{
-      color: rgba(255,255,255,0.86);
-      font-size: 1.02rem;
-      max-width: 60ch;
-    }
-
-    .feature-meta{
-      margin-top: 14px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
     }
 
     /* STORY */
     .story{
-      padding: 58px 0 26px 0;
-    }
-
-    .story h2{
-      font-size: clamp(1.6rem, 3vw, 2.35rem);
-      letter-spacing: -0.02em;
-      margin-bottom: 14px;
+      padding: 60px 0;
     }
 
     .story-grid{
       display:grid;
       grid-template-columns: 1.2fr 0.8fr;
-      gap: 22px;
-      align-items:start;
-      margin-top: 22px;
-    }
-
-    .story p{
-      color: rgba(255,255,255,0.86);
-      font-size: 1.02rem;
+      gap: 24px;
     }
 
     .quote{
-      border-left: 3px solid rgba(255,255,255,0.22);
+      border-left: 3px solid var(--border);
+      padding-left: 16px;
       font-style: italic;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 14px;
-      padding: 16px;
-      color: rgba(255,255,255,0.90);
+      opacity: 0.9;
     }
 
     /* GALLERY */
     .gallery{
-      padding: 40px 0 84px 0;
-    }
-
-    .gallery-header{
-      display:flex;
-      align-items:end;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-    }
-
-    .gallery-header h3{
-      font-size: 1.35rem;
-      letter-spacing: -0.01em;
-    }
-
-    .gallery-header p{
-      max-width: 560px;
-      color: rgba(255,255,255,0.80);
-      font-size: 0.98rem;
+      padding: 60px 0 90px;
     }
 
     .grid{
       display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(12,1fr);
+      gap:18px;
     }
 
     figure.card{
       grid-column: span 6;
       border-radius: 18px;
       overflow: hidden;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.10);
+      border: 1px solid var(--border);
+      background: var(--card);
     }
 
     figure.card img{
-      width: 100%;
-      height: 360px;
+      width:100%;
+      height:360px;
       object-fit: cover;
-      display:block;
-      transition: transform 240ms ease;
-    }
-
-    figure.card:hover img{
-      transform: scale(1.03);
     }
 
     figcaption{
-      padding: 14px 16px 16px 16px;
+      padding: 14px;
     }
 
-    .cap-title{
-      font-weight: 600;
-      margin-bottom: 4px;
-      letter-spacing: -0.01em;
-    }
-
-    .cap-sub{
-      color: rgba(255,255,255,0.78);
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 980px){
-      .feature-grid{ grid-template-columns: 1fr; }
-      .feature-card img{ height: 420px; }
-      .story-grid{ grid-template-columns: 1fr; }
-      .hero-video{ width: min(720px, 100%); }
-    }
-
-    @media (max-width: 900px){
+    @media(max-width:900px){
+      .feature-grid,
+      .story-grid{ grid-template-columns:1fr; }
       figure.card{ grid-column: span 12; }
-      figure.card img{ height: 320px; }
-      .logo{ width: 82px; height: 82px; }
-      h1{ font-size: clamp(2.6rem, 8vw, 4.2rem); }
-    }
-
-    @media (max-width: 520px){
       h1{ white-space: normal; }
     }
   </style>
 </head>
 
 <body>
-  <!-- HERO -->
-  <header class="hero">
-    <div class="topbar">
-      <div class="container topbar-inner">
-        <div></div>
-        <img class="logo" src="assets/logo.png" alt="Lefaa Photography logo">
-      </div>
+
+<header class="hero">
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div></div>
+      <img src="assets/logo.png" class="logo" alt="Lefaa logo">
     </div>
+  </div>
 
-    <div class="hero-content">
-      <div class="container">
-        <div class="hero-stack">
-          <div class="kicker">Safi • Rass Lefaa</div>
-
-          <h1>Lefaa Photography <span class="a54">أ 54</span></h1>
-
-          <!-- ✅ VIDEO UNDER TITLE -->
-          <div class="hero-video">
-            <video
-              src="assets/wave intro.mp4"
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="metadata"
-            ></video>
-          </div>
-
-          <p class="lead">
-            Surf photography & film driven by ocean culture.
-            We capture the rhythm of Rass Lefaa — the wave that pulls surfers from around the world to Safi.
-          </p>
-
-          <div class="meta">
-            <span class="pill">Surf • Ocean Culture</span>
-            <span class="pill">Photo + Film</span>
-            <span class="pill">Safi, Morocco</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="scroll-hint">Scroll ↓</div>
-  </header>
-
-  <!-- OUSSAMA FEATURE -->
-  <section class="feature">
+  <div class="hero-content">
     <div class="container">
-      <div class="feature-grid">
-        <div class="feature-card">
-          <img src="assets/Body board flip.png" alt="Bodyboard flip — rolling the wave">
+      <div class="hero-stack">
+        <div class="kicker">Safi • Rass Lefaa</div>
+
+        <h1>Lefaa Photography <span class="a54">أ 54</span></h1>
+
+        <div class="hero-video">
+          <video
+            src="assets/wave%20intro.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata">
+          </video>
         </div>
 
-        <div class="feature-text">
-          <div class="label">The Photographer</div>
-          <h2>Oussama — surfer, filmmaker, and wave storyteller.</h2>
-          <p>
-            From Safi, shaped by salt and wind, Oussama frames the moment where water becomes emotion.
-            The breath before the paddle, the impact, the release — captured clean, sharp, and alive.
-          </p>
-          <div class="feature-meta">
-            <span class="pill">Rolling the wave</span>
-            <span class="pill">Bodyboard</span>
-            <span class="pill">Rass Lefaa</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STORY -->
-  <section class="story">
-    <div class="container">
-      <div class="kicker">Our approach</div>
-      <h2>Every set is a story — light, timing, and the people inside the wave.</h2>
-
-      <div class="story-grid">
-        <p>
-          From Safi, shaped by salt and wind, Oussama and Ali are brothers by Ocean and by soul.
-          Raised where the waves carve stories into stone, they learned early that the ocean is not
-          a destination — it’s a language.
-          <br><br>
-          Built by <strong>Oussama</strong> & <strong>Ali</strong> — photographers and surfers from Safi — Lefaa exists to
-          turn sessions into memories you can keep.
+        <p class="lead">
+          Surf photography & film driven by ocean culture.
+          We capture the rhythm of Rass Lefaa — the wave that pulls surfers from around the world to Safi.
         </p>
 
-        <div class="quote">
-          “Strong images come from strong rhythm: the ocean sets the pace — we frame it.”
+        <div class="meta">
+          <span class="pill">Surf • Ocean Culture</span>
+          <span class="pill">Photo + Film</span>
+          <span class="pill">Safi, Morocco</span>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- GALLERY -->
-  <section class="gallery">
-    <div class="container">
-      <div class="gallery-header">
-        <div>
-          <h3>Featured stories</h3>
-          <p>Each wave is a moment that will never return — so we ride it fully.</p>
-        </div>
-      </div>
+  <div class="scroll-hint">Scroll ↓</div>
+</header>
 
-      <div class="grid">
-        <figure class="card">
-          <img src="assets/surf-barrel.jpg.JPG" alt="Surf barrel wave">
-          <figcaption>
-            <div class="cap-title">Inside the Barrel</div>
-            <div class="cap-sub">We don’t chase waves — we listen to them.</div>
-          </figcaption>
-        </figure>
-
-        <figure class="card">
-          <img src="assets/surf-lineup.jpg.JPG" alt="Surfers in lineup">
-          <figcaption>
-            <div class="cap-title">The Lineup</div>
-            <div class="cap-sub">Waiting, reading the horizon, choosing the moment.</div>
-          </figcaption>
-        </figure>
-
-        <figure class="card">
-          <img src="assets/surf-paddling.jpg.JPG" alt="Surfer paddling">
-          <figcaption>
-            <div class="cap-title">The Paddle</div>
-            <div class="cap-sub">Where every story actually starts.</div>
-          </figcaption>
-        </figure>
-      </div>
+<section class="feature">
+  <div class="container feature-grid">
+    <div class="feature-card">
+      <img src="assets/Body%20board%20flip.png" alt="Bodyboard flip">
     </div>
-  </section>
+
+    <div>
+      <div class="label">The Photographer</div>
+      <h2>Oussama — surfer, filmmaker, and wave storyteller.</h2>
+      <p>
+        From Safi, shaped by salt and wind, Oussama captures the instant
+        where motion becomes memory.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="story">
+  <div class="container story-grid">
+    <p>
+      From Safi, shaped by salt and wind, Oussama and Ali are brothers by ocean and by soul.
+      Raised where waves carve stories into stone, they learned the sea is a language.
+    </p>
+
+    <div class="quote">
+      “Strong images come from strong rhythm — the ocean sets the pace.”
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="container grid">
+    <figure class="card">
+      <img src="assets/surf-barrel.jpg.JPG">
+      <figcaption>Inside the barrel</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="assets/surf-lineup.jpg.JPG">
+      <figcaption>The lineup</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="assets/surf-paddling.jpg.JPG">
+      <figcaption>The paddle</figcaption>
+    </figure>
+  </div>
+</section>
+
 </body>
 </html>
