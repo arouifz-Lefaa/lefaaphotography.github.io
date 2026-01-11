@@ -32,4 +32,205 @@
 
     .hero::before{
       content:"";
-      position:absolute
+      position:absolute;
+      inset:0;
+      background:linear-gradient(rgba(0,0,0,0.12),rgba(0,0,0,0.08));
+    }
+
+    .topbar{
+      position:absolute;
+      top:0;left:0;right:0;
+      padding:18px 0;
+      z-index:3;
+    }
+
+    .topbar-inner{
+      display:flex;
+      justify-content:flex-end;
+    }
+
+    .logo{
+      width:96px;
+      height:96px;
+      object-fit:contain;
+      filter:drop-shadow(0 12px 22px rgba(0,0,0,.45));
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      padding:100px 0 60px;
+    }
+
+    /* 🔥 UPDATED */
+    .hero-stack{
+      max-width:720px;
+      margin-left:auto;
+      padding-left:48px;
+      padding-right:24px;
+      position:relative;
+    }
+
+    .hero-stack::before{
+      content:"";
+      position:absolute;
+      inset:-40px;
+      background:linear-gradient(
+        to left,
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.25) 40%,
+        rgba(0,0,0,0.05) 70%,
+        transparent
+      );
+      z-index:-1;
+      border-radius:28px;
+    }
+
+    .kicker{
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-size:.82rem;
+      opacity:.85;
+      margin-bottom:10px;
+    }
+
+    h1{
+      font-size:clamp(3rem,7vw,5.4rem);
+      line-height:1;
+      letter-spacing:-.05em;
+      white-space:nowrap;
+      margin-bottom:14px;
+    }
+
+    .a54{
+      font-size:.42em;
+      margin-left:12px;
+      opacity:.85;
+    }
+
+    .hero-video{
+      width:min(640px,100%);
+      aspect-ratio:16/9;
+      border-radius:16px;
+      overflow:hidden;
+      margin-bottom:18px;
+    }
+
+    video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .lead{
+      max-width:60ch;
+      opacity:.9;
+      margin-bottom:16px;
+    }
+
+    .meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .pill{
+      padding:.34rem .72rem;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(0,0,0,.18);
+      font-size:.94rem;
+    }
+
+    .scroll-hint{
+      position:absolute;
+      bottom:18px;
+      left:50%;
+      transform:translateX(-50%);
+      opacity:.75;
+    }
+
+    /* FEATURE */
+    .feature{
+      padding:72px 0;
+    }
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+      align-items:center;
+    }
+
+    .feature-card{
+      border-radius:18px;
+      overflow:hidden;
+    }
+
+    .feature-card img{
+      width:100%;
+      height:520px;
+      object-fit:cover;
+    }
+
+    .label{
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-size:.78rem;
+      opacity:.75;
+      margin-bottom:10px;
+    }
+
+    .feature h2{
+      font-size:clamp(1.8rem,3vw,2.6rem);
+      margin-bottom:12px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .feature-grid{grid-template-columns:1fr;}
+      h1{white-space:normal;}
+      .hero-stack{margin-left:0;padding-left:24px;}
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <img src="assets/logo.png" class="logo" alt="Lefaa logo">
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-stack">
+        <div class="kicker">Safi • Rass Lefaa</div>
+
+        <h1>Lefaa Photography <span class="a54">أ 54</span></h1>
+
+        <div class="hero-video">
+          <video src="assets/wave%20intro.mp4" autoplay muted loop playsinline></video>
+        </div>
+
+        <p class="lead">
+          Surf photography & film driven by ocean culture.
+          Capturing the rhythm of Rass Lefaa.
+        </p>
+
+        <div class="meta">
+          <span class="pill">Surf • Ocean Culture</span>
+          <span class="pill">Photo + Film</span>
+          <span class="pill">Safi, Morocco</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">Scroll ↓</div>
+</header>
+
+</body>
+</html>
