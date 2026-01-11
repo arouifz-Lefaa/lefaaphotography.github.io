@@ -4,164 +4,215 @@
   <meta charset="UTF-8" />
   <title>Lefaa Photography</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      color: #fff;
-      line-height: 1.6;
-      background: #0b1b24;
+    :root{
+      --bg: #0b1b24;
+      --text: rgba(255,255,255,0.95);
+      --muted: rgba(255,255,255,0.78);
+      --muted2: rgba(255,255,255,0.66);
+      --border: rgba(255,255,255,0.14);
     }
 
-    .container {
+    body{
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container{
       width: min(1100px, 92%);
       margin: 0 auto;
     }
 
-    /* HERO */
-    .hero {
+    /* HERO (wave must stay visible) */
+    .hero{
+      position: relative;
       min-height: 100vh;
+      background: url("/assets/wave-2.jpg") center / cover no-repeat;
+      overflow: hidden;
+    }
+
+    /* subtle readability overlay ONLY where text is (top-left).
+       keeps the wave visible everywhere else */
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
       background:
-        radial-gradient(1200px 700px at 50% 80%, rgba(0,0,0,0.18), rgba(0,0,0,0.82)),
-        linear-gradient(rgba(0,0,0,0.20), rgba(0,0,0,0.62)),
-        url("/assets/wave-2.jpg") center / cover no-repeat;
-      display: grid;
-      place-items: center;
-      padding: 4rem 0;
+        radial-gradient(900px 520px at 22% 22%, rgba(0,0,0,0.55), transparent 70%),
+        linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.16));
+      pointer-events:none;
     }
 
-    .hero-card {
-      width: min(900px, 92%);
-      padding: 2.2rem;
-      border-radius: 18px;
-      background: rgba(0,0,0,0.48);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.14);
-      text-align: center;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    /* top bar */
+    .topbar{
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      z-index: 3;
+      padding: 18px 0;
     }
 
-    .logo {
-      width: 110px;
-      height: 110px;
+    .topbar-inner{
+      display:flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    /* logo top-right */
+    .logo{
+      width: 68px;
+      height: 68px;
       object-fit: contain;
-      display: block;
-      margin: 0 auto 14px auto;
+      display:block;
       filter: drop-shadow(0 10px 18px rgba(0,0,0,0.35));
+      opacity: 0.98;
     }
 
-    .hero h1 {
-      font-size: clamp(2.4rem, 6vw, 4.2rem);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.9rem;
+    /* hero content (top-left) */
+    .hero-content{
+      position: relative;
+      z-index: 2;
+      padding: 92px 0 56px 0;
     }
 
-    .hero p {
-      font-size: 1.08rem;
-      max-width: 820px;
-      margin: 0 auto 1.2rem auto;
-      opacity: 0.92;
+    .hero-stack{
+      max-width: 640px;     /* not too wide */
+      padding-top: 22px;
     }
 
-    .hero-meta {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      flex-wrap: wrap;
-      opacity: 0.9;
-      font-size: 0.95rem;
-      margin-top: 10px;
-    }
-
-    .pill {
-      padding: 0.35rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(0,0,0,0.22);
-    }
-
-    /* STORY SECTION */
-    .story {
-      padding: 70px 0 30px 0;
-      background: #0b1b24; /* ensures content visible even if images fail */
-    }
-
-    .kicker {
+    .kicker{
       text-transform: uppercase;
       letter-spacing: 0.14em;
       font-size: 0.82rem;
-      opacity: 0.8;
-      margin-bottom: 14px;
+      opacity: 0.86;
+      margin-bottom: 12px;
     }
 
-    .story h2 {
-      font-size: clamp(1.6rem, 3vw, 2.3rem);
-      margin-bottom: 14px;
-      letter-spacing: -0.02em;
+    h1{
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
     }
 
-    .story-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 28px;
-      align-items: start;
-      margin-top: 22px;
+    .lead{
+      font-size: 1.06rem;
+      color: rgba(255,255,255,0.90);
+      margin-bottom: 16px;
     }
 
-    .story p {
-      opacity: 0.9;
-      font-size: 1.02rem;
+    .meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 8px;
     }
 
-    .quote {
-      border-left: 3px solid rgba(255,255,255,0.25);
-      padding-left: 16px;
-      opacity: 0.92;
-      font-style: italic;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 12px;
-      padding: 16px;
+    .pill{
+      padding: 0.34rem 0.72rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(0,0,0,0.18);
+      color: rgba(255,255,255,0.88);
+      font-size: 0.94rem;
+      backdrop-filter: blur(6px);
     }
 
-    /* FEATURED STORIES GALLERY */
-    .gallery {
-      padding: 40px 0 80px 0;
+    /* arrow hint */
+    .scroll-hint{
+      position:absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 18px;
+      z-index: 3;
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.82);
+      opacity: 0.95;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(0,0,0,0.18);
+      backdrop-filter: blur(6px);
+    }
+
+    /* STORY SECTION */
+    .story{
+      padding: 78px 0 26px 0;
       background: #0b1b24;
     }
 
-    .gallery-header {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 18px;
-      flex-wrap: wrap;
+    .story h2{
+      font-size: clamp(1.6rem, 3vw, 2.35rem);
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
     }
 
-    .gallery-header h3 {
+    .story-grid{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+      align-items:start;
+      margin-top: 22px;
+    }
+
+    .story p{
+      color: rgba(255,255,255,0.86);
+      font-size: 1.02rem;
+    }
+
+    .quote{
+      border-left: 3px solid rgba(255,255,255,0.22);
+      padding-left: 16px;
+      font-style: italic;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 14px;
+      padding: 16px;
+      color: rgba(255,255,255,0.90);
+    }
+
+    /* GALLERY */
+    .gallery{
+      padding: 40px 0 84px 0;
+      background: #0b1b24;
+    }
+
+    .gallery-header{
+      display:flex;
+      align-items:end;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .gallery-header h3{
       font-size: 1.35rem;
       letter-spacing: -0.01em;
     }
 
-    .gallery-header p {
-      opacity: 0.82;
-      max-width: 520px;
+    .gallery-header p{
+      max-width: 560px;
+      color: rgba(255,255,255,0.80);
       font-size: 0.98rem;
     }
 
-    .grid {
-      display: grid;
+    .grid{
+      display:grid;
       grid-template-columns: repeat(12, 1fr);
       gap: 18px;
     }
 
-    figure.card {
+    figure.card{
       grid-column: span 6;
       border-radius: 18px;
       overflow: hidden;
@@ -169,63 +220,80 @@
       border: 1px solid rgba(255,255,255,0.10);
     }
 
-    figure.card img {
+    figure.card img{
       width: 100%;
       height: 360px;
       object-fit: cover;
-      display: block;
+      display:block;
       transition: transform 240ms ease;
     }
 
-    figure.card:hover img {
+    figure.card:hover img{
       transform: scale(1.03);
     }
 
-    figcaption {
+    figcaption{
       padding: 14px 16px 16px 16px;
     }
 
-    .cap-title {
+    .cap-title{
       font-weight: 600;
       margin-bottom: 4px;
       letter-spacing: -0.01em;
     }
 
-    .cap-sub {
-      opacity: 0.82;
+    .cap-sub{
+      color: rgba(255,255,255,0.78);
       font-size: 0.95rem;
     }
 
     /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .story-grid { grid-template-columns: 1fr; }
-      figure.card { grid-column: span 12; }
-      figure.card img { height: 320px; }
-      .logo { width: 96px; height: 96px; }
+    @media (max-width: 900px){
+      .story-grid{ grid-template-columns: 1fr; }
+      figure.card{ grid-column: span 12; }
+      figure.card img{ height: 320px; }
+
+      .logo{ width: 58px; height: 58px; }
+      .hero-content{ padding: 86px 0 56px 0; }
+      .hero-stack{ max-width: 92%; }
     }
   </style>
 </head>
 
 <body>
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-card">
-      <img class="logo" src="/assets/logo.png" alt="Lefaa Photography logo">
-
-      <h1>Lefaa Photography</h1>
-      <p>
-        Lefaa is a Safi-based photography and film studio driven by ocean culture.
-        We create visual stories for brands and individuals who move with the sea —
-        blending storytelling, motion, and emotion.
-      </p>
-
-      <div class="hero-meta">
-        <span class="pill">Surf • Ocean Culture</span>
-        <span class="pill">Photo + Film</span>
-        <span class="pill">Safi, Morocco</span>
+  <header class="hero">
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <div></div>
+        <!-- logo top-right -->
+        <img class="logo" src="/assets/logo.png" alt="Lefaa Photography logo">
       </div>
     </div>
-  </section>
+
+    <div class="hero-content">
+      <div class="container">
+        <div class="hero-stack">
+          <div class="kicker">Safi • Pass Leaf</div>
+
+          <h1>Lefaa Photography</h1>
+
+          <p class="lead">
+            Surf photography & film driven by ocean culture.
+            We capture the rhythm of Pass Leaf — the wave that pulls surfers from around the world to Safi.
+          </p>
+
+          <div class="meta">
+            <span class="pill">Surf • Ocean Culture</span>
+            <span class="pill">Photo + Film</span>
+            <span class="pill">Safi, Morocco</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">Scroll ↓</div>
+  </header>
 
   <!-- STORY -->
   <section class="story">
@@ -235,10 +303,11 @@
 
       <div class="story-grid">
         <p>
-          We don’t just take photos. We chase moments: the calm before the paddle,
-          the tension in the lineup, the release inside the barrel. Lefaa is built
-          around surf culture — real movement, real weather, real emotion — captured
-          with a clean cinematic look.
+          We don’t just take photos — we chase moments. The calm before the paddle, the tension in the lineup,
+          the release inside the barrel. Pass Leaf is a rare kind of wave, and Safi is a meeting point:
+          locals and travelers, all here for the same ocean rhythm. That’s the story we frame.
+          <br><br>
+          Built by <strong>Oussama</strong> & <strong>Ali</strong> — photographers and surfers from Safi — Lefaa exists to turn sessions into memories you can keep.
         </p>
 
         <div class="quote">
@@ -263,7 +332,7 @@
           <img src="/assets/surf-barrel.jpg.JPG" alt="Surf barrel wave">
           <figcaption>
             <div class="cap-title">Inside the Barrel</div>
-            <div class="cap-sub">Speed, spray, and a split-second line.</div>
+            <div class="cap-sub">A clean line — then white noise.</div>
           </figcaption>
         </figure>
 
@@ -271,7 +340,7 @@
           <img src="/assets/surf-lineup.jpg.JPG" alt="Surfers in lineup">
           <figcaption>
             <div class="cap-title">The Lineup</div>
-            <div class="cap-sub">Silence, strategy, and the next set approaching.</div>
+            <div class="cap-sub">Waiting, reading the horizon, choosing the moment.</div>
           </figcaption>
         </figure>
 
@@ -279,7 +348,7 @@
           <img src="/assets/surf-paddling.jpg.JPG" alt="Surfer paddling">
           <figcaption>
             <div class="cap-title">The Paddle</div>
-            <div class="cap-sub">Effort before glory — where the story starts.</div>
+            <div class="cap-sub">Where every story actually starts.</div>
           </figcaption>
         </figure>
       </div>
