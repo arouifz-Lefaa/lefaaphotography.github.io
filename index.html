@@ -5,81 +5,270 @@
   <title>Lefaa Photography</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', sans-serif;
       background: #0b1b24;
       color: white;
-    }
-
-    /* HERO SECTION */
-    .hero {
-      min-height: 100vh;
-      background:
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-        url("assets/hero.jpg.JPG") center / cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.15rem;
-      max-width: 720px;
-      opacity: 0.9;
       line-height: 1.6;
     }
 
-    /* GALLERY SECTION */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      padding: 60px 40px;
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
     }
 
-    .gallery img {
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background:
+        radial-gradient(1200px 700px at 50% 80%, rgba(11,27,36,0.2), rgba(11,27,36,0.95)),
+        linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.55)),
+        url("assets/hero.jpg.JPG") center / cover no-repeat;
+      display: grid;
+      place-items: center;
+      padding: 4rem 0;
+    }
+
+    .hero-card {
+      width: min(900px, 92%);
+      padding: 2.2rem 2.2rem;
+      border-radius: 18px;
+      background: rgba(0,0,0,0.25);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.12);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      max-width: 760px;
+      margin: 0 auto 1.4rem auto;
+      opacity: 0.92;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0.9;
+      font-size: 0.95rem;
+    }
+
+    .pill {
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(0,0,0,0.18);
+    }
+
+    /* STORY SECTION */
+    .story {
+      padding: 70px 0 30px 0;
+    }
+
+    .kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.82rem;
+      opacity: 0.8;
+      margin-bottom: 14px;
+    }
+
+    .story h2 {
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: start;
+      margin-top: 22px;
+    }
+
+    .story p {
+      opacity: 0.9;
+      font-size: 1.02rem;
+    }
+
+    .quote {
+      border-left: 3px solid rgba(255,255,255,0.25);
+      padding-left: 16px;
+      opacity: 0.92;
+      font-style: italic;
+      background: rgba(255,255,255,0.04);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    /* FEATURED STORIES GALLERY */
+    .gallery {
+      padding: 40px 0 80px 0;
+    }
+
+    .gallery-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .gallery-header h3 {
+      font-size: 1.35rem;
+      letter-spacing: -0.01em;
+    }
+
+    .gallery-header p {
+      opacity: 0.82;
+      max-width: 520px;
+      font-size: 0.98rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    figure.card {
+      grid-column: span 6;
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+      transform: translateZ(0);
+    }
+
+    figure.card img {
       width: 100%;
-      height: 320px;
+      height: 360px;
       object-fit: cover;
-      border-radius: 14px;
+      display: block;
+      transition: transform 240ms ease;
+    }
+
+    figure.card:hover img {
+      transform: scale(1.03);
+    }
+
+    figcaption {
+      padding: 14px 16px 16px 16px;
+    }
+
+    .cap-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+
+    .cap-sub {
+      opacity: 0.82;
+      font-size: 0.95rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .story-grid { grid-template-columns: 1fr; }
+      figure.card { grid-column: span 12; }
+      figure.card img { height: 320px; }
     }
   </style>
 </head>
 
 <body>
-
   <!-- HERO -->
   <section class="hero">
-    <div>
+    <div class="hero-card">
       <h1>Lefaa Photography</h1>
       <p>
         Lefaa is a Safi-based photography and film studio driven by ocean culture.
         We create visual stories for brands and individuals who move with the sea —
         blending storytelling, motion, and emotion.
       </p>
+
+      <!-- caption / meta (this is the “caption” part you said got removed) -->
+      <div class="hero-meta">
+        <span class="pill">Surf • Ocean Culture</span>
+        <span class="pill">Photo + Film</span>
+        <span class="pill">Safi, Morocco</span>
+      </div>
     </div>
   </section>
 
-  <!-- GALLERY -->
+  <!-- STORYTELLING -->
+  <section class="story">
+    <div class="container">
+      <div class="kicker">Our approach</div>
+      <h2>Every set is a story — light, timing, and the people inside the wave.</h2>
+
+      <div class="story-grid">
+        <p>
+          We don’t just take photos. We chase moments: the calm before the paddle,
+          the tension in the lineup, the release inside the barrel. Lefaa is built
+          around surf culture — real movement, real weather, real emotion — captured
+          with a clean cinematic look.
+        </p>
+
+        <div class="quote">
+          “Strong images come from strong rhythm: the ocean sets the pace — we frame it.”
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED STORIES (with captions) -->
   <section class="gallery">
-    <img src="assets/surf-barrel.jpg.JPG" alt="Surf barrel wave">
-    <img src="assets/surf-lineup.jpg.JPG" alt="Surfers in lineup">
-    <img src="assets/surf-paddling.jpg.JPG
+    <div class="container">
+      <div class="gallery-header">
+        <div>
+          <h3>Featured stories</h3>
+          <p>Three moments from the same world — power, patience, and motion.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <figure class="card">
+          <img src="assets/surf-barrel.jpg.JPG" alt="Surf barrel wave">
+          <figcaption>
+            <div class="cap-title">Inside the Barrel</div>
+            <div class="cap-sub">Speed, spray, and a split-second line.</div>
+          </figcaption>
+        </figure>
+
+        <figure class="card">
+          <img src="assets/surf-lineup.jpg.JPG" alt="Surfers in lineup">
+          <figcaption>
+            <div class="cap-title">The Lineup</div>
+            <div class="cap-sub">Silence, strategy, and the next set approaching.</div>
+          </figcaption>
+        </figure>
+
+        <figure class="card">
+          <img src="assets/surf-paddling.jpg.JPG" alt="Surfer paddling">
+          <figcaption>
+            <div class="cap-title">The Paddle</div>
+            <div class="cap-sub">Effort before glory — where the story starts.</div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
