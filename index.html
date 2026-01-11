@@ -95,20 +95,41 @@
     }
 
     h1{
-      font-size: clamp(3.0rem, 7vw, 5.4rem); /* bigger title */
+      font-size: clamp(3.0rem, 7vw, 5.4rem);
       line-height: 1.0;
       letter-spacing: -0.05em;
-      margin-bottom: 14px;
-      white-space: nowrap; /* keep on one line */
+      margin-bottom: 10px;
+      white-space: nowrap;
     }
 
     .a54{
-      font-size: 0.42em;     /* smaller */
+      font-size: 0.42em;
       font-weight: 600;
       opacity: 0.9;
       margin-left: 12px;
-      white-space: nowrap;   /* keep أ 54 together */
+      white-space: nowrap;
       vertical-align: baseline;
+    }
+
+    /* ✅ VIDEO STRIP (under title) */
+    .hero-video{
+      width: min(640px, 92%);
+      aspect-ratio: 16 / 9;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.22);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+      backdrop-filter: blur(6px);
+      margin: 12px 0 14px 0;
+    }
+
+    .hero-video video{
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      filter: saturate(1.05) contrast(1.04);
     }
 
     .lead{
@@ -151,10 +172,7 @@
       backdrop-filter: blur(6px);
     }
 
-    /* SECTION BASE */
-    section{
-      background: var(--bg);
-    }
+    section{ background: var(--bg); }
 
     /* OUSSAMA FEATURE */
     .feature{
@@ -320,6 +338,7 @@
       .feature-grid{ grid-template-columns: 1fr; }
       .feature-card img{ height: 420px; }
       .story-grid{ grid-template-columns: 1fr; }
+      .hero-video{ width: min(720px, 100%); }
     }
 
     @media (max-width: 900px){
@@ -330,7 +349,7 @@
     }
 
     @media (max-width: 520px){
-      h1{ white-space: normal; } /* allow wrap on tiny screens */
+      h1{ white-space: normal; }
     }
   </style>
 </head>
@@ -352,6 +371,18 @@
 
           <h1>Lefaa Photography <span class="a54">أ 54</span></h1>
 
+          <!-- ✅ VIDEO UNDER TITLE -->
+          <div class="hero-video">
+            <video
+              src="assets/wave intro.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+          </div>
+
           <p class="lead">
             Surf photography & film driven by ocean culture.
             We capture the rhythm of Rass Lefaa — the wave that pulls surfers from around the world to Safi.
@@ -369,12 +400,11 @@
     <div class="scroll-hint">Scroll ↓</div>
   </header>
 
-  <!-- OUSSAMA FEATURE (FIRST IMAGE UNDER HERO) -->
+  <!-- OUSSAMA FEATURE -->
   <section class="feature">
     <div class="container">
       <div class="feature-grid">
         <div class="feature-card">
-          <!-- EXACT filename with spaces -->
           <img src="assets/Body board flip.png" alt="Bodyboard flip — rolling the wave">
         </div>
 
