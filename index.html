@@ -38,8 +38,6 @@
       overflow: hidden;
     }
 
-    /* subtle readability overlay ONLY where text is (top-left).
-       keeps the wave visible everywhere else */
     .hero::before{
       content:"";
       position:absolute;
@@ -67,10 +65,10 @@
       gap: 16px;
     }
 
-    /* logo top-right */
+    /* ✅ Bigger logo top-right */
     .logo{
-      width: 68px;
-      height: 68px;
+      width: 100px;
+      height: 100px;
       object-fit: contain;
       display:block;
       filter: drop-shadow(0 10px 18px rgba(0,0,0,0.35));
@@ -85,7 +83,7 @@
     }
 
     .hero-stack{
-      max-width: 640px;     /* not too wide */
+      max-width: 640px;
       padding-top: 22px;
     }
 
@@ -127,7 +125,6 @@
       backdrop-filter: blur(6px);
     }
 
-    /* arrow hint */
     .scroll-hint{
       position:absolute;
       left: 50%;
@@ -144,9 +141,51 @@
       backdrop-filter: blur(6px);
     }
 
+    /* ✅ NEW SECTION: OUSSAMA FEATURE (first after hero) */
+    .feature{
+      padding: 60px 0 10px 0;
+      background: #0b1b24;
+    }
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .feature-card{
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .feature-card img{
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      display:block;
+    }
+
+    .feature-text .kicker{
+      margin-bottom: 10px;
+    }
+
+    .feature-text h2{
+      font-size: clamp(1.5rem, 2.6vw, 2.15rem);
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .feature-text p{
+      color: rgba(255,255,255,0.86);
+      font-size: 1.02rem;
+    }
+
     /* STORY SECTION */
     .story{
-      padding: 78px 0 26px 0;
+      padding: 58px 0 26px 0;
       background: #0b1b24;
     }
 
@@ -253,7 +292,10 @@
       figure.card{ grid-column: span 12; }
       figure.card img{ height: 320px; }
 
-      .logo{ width: 58px; height: 58px; }
+      .feature-grid{ grid-template-columns: 1fr; }
+      .feature-card img{ height: 420px; }
+
+      .logo{ width: 84px; height: 84px; }
       .hero-content{ padding: 86px 0 56px 0; }
       .hero-stack{ max-width: 92%; }
     }
@@ -266,7 +308,6 @@
     <div class="topbar">
       <div class="container topbar-inner">
         <div></div>
-        <!-- logo top-right -->
         <img class="logo" src="/assets/logo.png" alt="Lefaa Photography logo">
       </div>
     </div>
@@ -276,7 +317,8 @@
         <div class="hero-stack">
           <div class="kicker">Safi أ 54 • Rass Lefaa أ 54</div>
 
-          <h1>Lefaa Photography</h1>
+          <!-- ✅ H1 now includes أ 54 -->
+          <h1>Lefaa Photography أ 54</h1>
 
           <p class="lead">
             Surf photography & film driven by ocean culture.
@@ -295,6 +337,28 @@
     <div class="scroll-hint">Scroll ↓</div>
   </header>
 
+  <!-- ✅ OUSSAMA FEATURE (FIRST AFTER HERO) -->
+  <section class="feature">
+    <div class="container">
+      <div class="feature-grid">
+        <div class="feature-card">
+          <!-- IMPORTANT: replace /assets/oussama.jpg with your exact filename -->
+          <img src="/assets/oussama.jpg" alt="Oussama — photographer and surfer from Safi">
+        </div>
+
+        <div class="feature-text">
+          <div class="kicker">The photographer</div>
+          <h2>Oussama — surfer, filmmaker, and wave storyteller.</h2>
+          <p>
+            From Safi, shaped by salt and wind, Oussama learned the ocean as a language.
+            He doesn’t just shoot surfing — he captures what it feels like: the breath before the paddle,
+            the silence in the lineup, and the seconds that become memories.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- STORY -->
   <section class="story">
     <div class="container">
@@ -303,22 +367,21 @@
 
       <div class="story-grid">
         <p>
-          
-From Safi, shaped by salt and wind, Oussama and Ali are brothers by Ocean and by soul. Raised where the waves of  Essaouiria and Safi Beach and Rass Lefaa carve stories into stone, they learned early that the ocean is not a destination but a language.
-
-What began at home became a shared vision brought to life through movement, trust, and time spent chasing the horizon together. Rooted in Safi and carried outward, their journey now flows across Europe, from the raw Atlantic energy to the soft light of Tuscany.
-
-They are wave storytellers, traveling with intention, turning fleeting moments into lasting memories. Guided by water, instinct, and connection, they do not simply ride waves but preserve the feeling they leave behind.
-
-This is a story of brotherhood, motion, and belonging.
-From Safi to the world, making moments last.
-
+          From Safi, shaped by salt and wind, Oussama and Ali are brothers by Ocean and by soul.
+          Raised where the waves of Essaouiria and Safi Beach and Rass Lefaa carve stories into stone,
+          they learned early that the ocean is not a destination but a language.
+          <br><br>
+          What began at home became a shared vision brought to life through movement, trust, and time spent chasing the horizon together.
+          Rooted in Safi and carried outward, their journey now flows across Europe, from the raw Atlantic energy to the soft light of Tuscany.
+          <br><br>
+          They are wave storytellers, traveling with intention, turning fleeting moments into lasting memories.
+          Guided by water, instinct, and connection, they do not simply ride waves but preserve the feeling they leave behind.
           <br><br>
           Built by <strong>Oussama</strong> & <strong>Ali</strong> — photographers and surfers from Safi أ 54 — Lefaa exists to turn sessions into memories you can keep.
         </p>
 
         <div class="quote">
-          “Strong images come from strong rhythm: the ocean sets the pace we frame it.”
+          “Strong images come from strong rhythm: the ocean sets the pace — we frame it.”
         </div>
       </div>
     </div>
