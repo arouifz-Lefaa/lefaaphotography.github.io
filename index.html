@@ -185,6 +185,15 @@
       display:block;
     }
 
+    /* ADDED: make videos inside feature-card behave like images (same look) */
+    .feature-card video{
+      width:100%;
+      height:520px;
+      object-fit: cover;
+      display:block;
+      background: rgba(0,0,0,0.25);
+    }
+
     .label{
       text-transform: uppercase;
       font-size: 0.78rem;
@@ -294,6 +303,7 @@
       h1{ white-space: normal; }
       .logo{ width: 92px; height: 92px; }
       .hero-video{ width: 100%; }
+      .feature-card video{ height: auto; }
     }
   </style>
 </head>
@@ -380,6 +390,35 @@
   </div>
 </section>
 
+<!-- ADDED: Wave Barrel video section (sound kept, looped) -->
+<section class="feature">
+  <div class="container feature-grid">
+    <div class="feature-card">
+      <video
+        src="assets/wavebarrel.mp4"
+        loop
+        controls
+        playsinline
+        preload="metadata">
+      </video>
+
+      <figcaption>
+        <div class="cap-title">Wave Barrel — Rass Lefaa</div>
+        <div class="cap-sub">Sound on. The reef hums, the lip throws, and the tunnel closes behind you.</div>
+      </figcaption>
+    </div>
+
+    <div>
+      <div class="label">Film Moment</div>
+      <h2>When the ocean turns into a room.</h2>
+      <p style="color: rgba(255,255,255,0.86);">
+        A barrel at Rass Lefaa isn’t just a wave — it’s pressure, rhythm, and trust.
+        This is the sound of Safi when everything lines up.
+      </p>
+    </div>
+  </div>
+</section>
+
 <section class="story">
   <div class="container story-grid">
     <p style="color: rgba(255,255,255,0.86); font-size: 1.02rem;">
@@ -406,81 +445,4 @@
 
     <div class="grid">
       <!-- Put these FIRST (as you asked) -->
-      <figure class="card">
-        <img src="assets/Body%20board%20flip.png" alt="Bodyboard flip">
-        <figcaption>
-          <div class="cap-title">Rolling the Wave</div>
-          <div class="cap-sub">A split-second above the lip — then gravity, spray, and control.</div>
-        </figcaption>
-      </figure>
-
-      <figure class="card">
-        <img src="assets/ALI%20wave.jpeg" alt="Ali wave">
-        <figcaption>
-          <div class="cap-title">Ali’s Set</div>
-          <div class="cap-sub">Clean lines, patient reading — letting the wall open.</div>
-        </figcaption>
-      </figure>
-
-      <figure class="card">
-        <img src="assets/aliaquaman.jpeg" alt="Ali aquaman">
-        <figcaption>
-          <div class="cap-title">Between Sets</div>
-          <div class="cap-sub">The ocean gives — and the day becomes a story.</div>
-        </figcaption>
-      </figure>
-
-      <figure class="card">
-        <img src="assets/alohaali.jpeg" alt="Aloha Ali">
-        <figcaption>
-          <div class="cap-title">Aloha Energy</div>
-          <div class="cap-sub">The smile after the session — Safi light, Safi soul.</div>
-        </figcaption>
-      </figure>
-
-      <!-- Your original surf shots -->
-      <figure class="card">
-        <img src="assets/hero.jpg.JPG" alt="Surf action">
-        <figcaption>
-          <div class="cap-title">Above the Lip</div>
-          <div class="cap-sub">Speed meets timing — where the wave becomes a canvas.</div>
-        </figcaption>
-      </figure>
-
-      <figure class="card">
-        <img src="assets/surf-barrel.jpg.JPG" alt="Surf barrel wave">
-        <figcaption>
-          <div class="cap-title">Inside the Barrel</div>
-          <div class="cap-sub">Light, water, and a line you can’t repeat.</div>
-        </figcaption>
-      </figure>
-
-      <figure class="card">
-        <img src="assets/surf-lineup.jpg.JPG" alt="Surfers in lineup">
-        <figcaption>
-          <div class="cap-title">The Lineup</div>
-          <div class="cap-sub">Reading the horizon — choosing the moment.</div>
-        </figcaption>
-      </figure>
-
-      <figure class="card">
-        <img src="assets/surf-paddling.jpg.JPG" alt="Surfer paddling">
-        <figcaption>
-          <div class="cap-title">The Paddle</div>
-          <div class="cap-sub">Where every story actually starts.</div>
-        </figcaption>
-      </figure>
-
-      <figure class="card">
-        <img src="assets/oussama%20aquaman.jpeg" alt="Oussama aquaman">
-        <figcaption>
-          <div class="cap-title">Aquaman Mood</div>
-          <div class="cap-sub">Saltwater confidence — the sea’s own signature.</div>
-        </figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-</body>
-</html>
+      <figure cl
