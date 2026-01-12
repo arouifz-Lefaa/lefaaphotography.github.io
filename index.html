@@ -62,13 +62,12 @@
     }
 
     .logo{
-  width: 168px;        /* 112 × 1.5 */
-  height: 168px;       /* 112 × 1.5 */
-  object-fit: contain;
-  filter: drop-shadow(0 12px 20px rgba(0,0,0,0.42));
-  opacity: 0.85;       /* 15% transparent */
-}
-
+      width: 168px;
+      height: 168px;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 20px rgba(0,0,0,0.42));
+      opacity: 0.85;
+    }
 
     .hero-content{
       position: relative;
@@ -297,6 +296,28 @@
       font-size: 0.95rem;
     }
 
+    /* NEW: sectioning buttons */
+    .section-tabs{
+      display:flex;
+      gap:10px;
+      flex-wrap: wrap;
+      margin: 14px 0 6px 0;
+    }
+    .tablink{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 0.42rem 0.78rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,0.16);
+      color: var(--text);
+      text-decoration:none;
+      font-size: 0.95rem;
+      backdrop-filter: blur(6px);
+    }
+    .tablink:hover{ background: rgba(255,255,255,0.06); }
+
     @media(max-width:900px){
       .feature-grid,
       .story-grid{ grid-template-columns:1fr; }
@@ -434,30 +455,88 @@
   </div>
 </section>
 
-<!-- Gallery (FULL size, no cropping, creative surf captions) -->
-<section class="gallery">
+<!-- NEW: Sectioning buttons (jump to Surf / Bodyboard) -->
+<section class="gallery" style="padding-bottom: 0;">
+  <div class="container">
+    <div class="gallery-head" style="margin-bottom: 10px;">
+      <div>
+        <h3>Galleries</h3>
+        <p>Choose a section — surf lines or bodyboard energy.</p>
+      </div>
+
+      <div class="section-tabs">
+        <a class="tablink" href="#surf-gallery">🏄 Surf Gallery</a>
+        <a class="tablink" href="#bodyboard-gallery">🧍‍♂️ Bodyboard Gallery</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEW: Surf Gallery (your current Gallery becomes Surf Gallery) -->
+<section class="gallery" id="surf-gallery">
   <div class="container">
     <div class="gallery-head">
       <div>
-        <h3>Gallery</h3>
+        <h3>Surf Gallery</h3>
         <p>Not files. Not thumbnails. Real moments — kept exactly as they happened.</p>
       </div>
     </div>
 
     <div class="grid">
-      <!-- Put these FIRST (as you asked) -->
-      <figure cl
-<figure class="card">
- <img src="assets/friends.jpeg" alt="Friends sharing a moment in the wave at Rass Lefaa">
+      <figure class="card">
+        <img src="assets/friends.jpeg" alt="Friends sharing a moment in the wave at Rass Lefaa">
+        <figcaption>
+          <div class="cap-title">Before the Break</div>
+          <div class="cap-sub">
+            That instant where instinct takes over and the ocean decides.
+          </div>
+        </figcaption>
+      </figure>
 
-  <figcaption>
-    <div class="cap-title">Before the Break</div>
-    <div class="cap-sub">
-      That instant where instinct takes over and the ocean decides.
+      <!-- Add more SURF photos here (copy/paste this block) -->
+      <!--
+      <figure class="card">
+        <img src="assets/your-surf-photo.jpg" alt="Surf photo">
+        <figcaption>
+          <div class="cap-title">Title</div>
+          <div class="cap-sub">Caption</div>
+        </figcaption>
+      </figure>
+      -->
     </div>
-  </figcaption>
-</figure>
+  </div>
+</section>
 
+<!-- NEW: Bodyboard Gallery -->
+<section class="gallery" id="bodyboard-gallery">
+  <div class="container">
+    <div class="gallery-head">
+      <div>
+        <h3>Bodyboard Gallery</h3>
+        <p>Close to the lip. Fast decisions. Pure impact.</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <!-- Add BODYBOARD photos here -->
+      <figure class="card">
+        <img src="assets/bodyboard-1.jpg" alt="Bodyboard moment">
+        <figcaption>
+          <div class="cap-title">Drop & Drive</div>
+          <div class="cap-sub">The split-second where speed becomes control.</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="assets/bodyboard-2.jpg" alt="Bodyboard barrel">
+        <figcaption>
+          <div class="cap-title">Under the Lip</div>
+          <div class="cap-sub">Low line, heavy water — still calm inside.</div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 
         <div class="contact-card">
   <h3>Direct contact</h3>
@@ -489,10 +568,9 @@
     </div>
 
     <div class="contact-line">
-  <span class="contact-label">Location:</span>
-  <span>Safi • Rass Lefaa, Morocco & Tuscany, Italy</span>
-</div>
-
+      <span class="contact-label">Location:</span>
+      <span>Safi • Rass Lefaa, Morocco & Tuscany, Italy</span>
+    </div>
 
   <div style="margin-top: 16px;">
     <span class="pill">Bookings</span>
@@ -500,3 +578,6 @@
     <span class="pill">Surf Films</span>
   </div>
 </div>
+
+</body>
+</html>
