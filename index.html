@@ -103,7 +103,7 @@
       white-space: nowrap;
     }
 
-    /* VIDEO under title (bigger) */
+    /* VIDEO under title */
     .hero-video{
       width: min(860px, 100%);
       aspect-ratio: 16/9;
@@ -185,7 +185,6 @@
       display:block;
     }
 
-    /* ADDED: make videos inside feature-card behave like images (same look) */
     .feature-card video{
       width:100%;
       height:520px;
@@ -227,7 +226,7 @@
       opacity: 0.9;
     }
 
-    /* GALLERY (NO CROP, NO FILENAMES) */
+    /* GALLERY */
     .gallery{
       padding: 60px 0 90px;
     }
@@ -269,7 +268,6 @@
       box-shadow: 0 12px 26px rgba(0,0,0,0.25);
     }
 
-    /* IMPORTANT: no fixed height, and contain = NO CROP */
     figure.card img{
       width:100%;
       height:auto;
@@ -296,7 +294,7 @@
       font-size: 0.95rem;
     }
 
-    /* NEW: sectioning buttons */
+    /* Section buttons */
     .section-tabs{
       display:flex;
       gap:10px;
@@ -318,6 +316,57 @@
     }
     .tablink:hover{ background: rgba(255,255,255,0.06); }
 
+    /* CONTACT (you had HTML, now styled + clean) */
+    .contact{
+      padding: 70px 0 90px;
+    }
+    .contact-card{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+    .contact-card h3{
+      font-size: 1.35rem;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+    .contact-card p{
+      color: rgba(255,255,255,0.80);
+      margin-bottom: 14px;
+    }
+    .contact-meta{
+      display:flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .contact-line{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.14);
+    }
+    .contact-label{
+      opacity: 0.82;
+      font-size: 0.95rem;
+      min-width: 160px;
+    }
+    .contact-link{
+      color: rgba(255,255,255,0.95);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.28);
+      padding-bottom: 1px;
+    }
+    .contact-link:hover{
+      border-bottom-color: rgba(255,255,255,0.55);
+    }
+
     @media(max-width:900px){
       .feature-grid,
       .story-grid{ grid-template-columns:1fr; }
@@ -326,6 +375,7 @@
       .logo{ width: 92px; height: 92px; }
       .hero-video{ width: 100%; }
       .feature-card video{ height: auto; }
+      .contact-label{ min-width: auto; }
     }
   </style>
 </head>
@@ -393,7 +443,7 @@
   </div>
 </section>
 
-<!-- Oussama section (kept) -->
+<!-- Oussama section -->
 <section class="feature">
   <div class="container feature-grid">
     <div class="feature-card">
@@ -412,7 +462,7 @@
   </div>
 </section>
 
-<!-- ADDED: Alilo. No noise. Just timing, water, and flow. video section (sound kept, looped) -->
+<!-- Video section -->
 <section class="feature">
   <div class="container feature-grid">
     <div class="feature-card">
@@ -455,7 +505,7 @@
   </div>
 </section>
 
-<!-- NEW: Sectioning buttons (jump to Surf / Bodyboard) -->
+<!-- Section buttons -->
 <section class="gallery" style="padding-bottom: 0;">
   <div class="container">
     <div class="gallery-head" style="margin-bottom: 10px;">
@@ -467,47 +517,67 @@
       <div class="section-tabs">
         <a class="tablink" href="#surf-gallery">🏄 Surf Gallery</a>
         <a class="tablink" href="#bodyboard-gallery">🧍‍♂️ Bodyboard Gallery</a>
+        <a class="tablink" href="#contact">📩 Contact</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- NEW: Surf Gallery (your current Gallery becomes Surf Gallery) -->
+<!-- Surf Gallery -->
 <section class="gallery" id="surf-gallery">
   <div class="container">
     <div class="gallery-head">
       <div>
         <h3>Surf Gallery</h3>
-        <p>Not files. Not thumbnails. Real moments — kept exactly as they happened.</p>
+        <p>Curated frames — clean lines, heavy water, and pure timing.</p>
       </div>
     </div>
 
     <div class="grid">
       <figure class="card">
-        <img src="assets/friends.jpeg" alt="Friends sharing a moment in the wave at Rass Lefaa">
+        <img src="assets/womensurf.JPG" alt="Woman surfing a clean line">
         <figcaption>
-          <div class="cap-title">Before the Break</div>
-          <div class="cap-sub">
-            That instant where instinct takes over and the ocean decides.
-          </div>
+          <div class="cap-title">Flow State</div>
+          <div class="cap-sub">Balance, focus, and a wave that listens.</div>
         </figcaption>
       </figure>
 
-      <!-- Add more SURF photos here (copy/paste this block) -->
-      <!--
       <figure class="card">
-        <img src="assets/your-surf-photo.jpg" alt="Surf photo">
+        <img src="assets/Yellowwomen.JPG" alt="Surfer in yellow framed by the ocean">
         <figcaption>
-          <div class="cap-title">Title</div>
-          <div class="cap-sub">Caption</div>
+          <div class="cap-title">Color in Motion</div>
+          <div class="cap-sub">A single tone cutting through blue energy.</div>
         </figcaption>
       </figure>
-      -->
+
+      <figure class="card">
+        <img src="assets/superbarrel.JPG" alt="Heavy barrel at Rass Lefaa">
+        <figcaption>
+          <div class="cap-title">Super Barrel</div>
+          <div class="cap-sub">When the ocean opens a room and dares you in.</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="assets/tebaigirl.JPG" alt="Surfer girl reading the wave">
+        <figcaption>
+          <div class="cap-title">Reading the Line</div>
+          <div class="cap-sub">Eyes forward, timing everything.</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="assets/DSC04824.JPG" alt="Surf moment captured at the peak">
+        <figcaption>
+          <div class="cap-title">The Peak</div>
+          <div class="cap-sub">One decision — the wave answers.</div>
+        </figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<!-- NEW: Bodyboard Gallery -->
+<!-- Bodyboard Gallery (placeholders - rename files when you have them) -->
 <section class="gallery" id="bodyboard-gallery">
   <div class="container">
     <div class="gallery-head">
@@ -518,7 +588,6 @@
     </div>
 
     <div class="grid">
-      <!-- Add BODYBOARD photos here -->
       <figure class="card">
         <img src="assets/bodyboard-1.jpg" alt="Bodyboard moment">
         <figcaption>
@@ -538,46 +607,49 @@
   </div>
 </section>
 
-        <div class="contact-card">
-  <h3>Direct contact</h3>
-  <p>Fastest way: WhatsApp or Instagram DM.</p>
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-card">
+      <h3>Direct contact</h3>
+      <p>Fastest way: WhatsApp or Instagram DM.</p>
 
-  <div class="contact-meta">
-    <div class="contact-line">
-      <span class="contact-label">WhatsApp (Intl):</span>
-      <a class="contact-link" href="https://wa.me/393780627439" target="_blank" rel="noopener">
-        +39 378 062 7439
-      </a>
+      <div class="contact-meta">
+        <div class="contact-line">
+          <span class="contact-label">WhatsApp (Intl):</span>
+          <a class="contact-link" href="https://wa.me/393780627439" target="_blank" rel="noopener">
+            +39 378 062 7439
+          </a>
+        </div>
+
+        <div class="contact-line">
+          <span class="contact-label">WhatsApp (Morocco):</span>
+          <a class="contact-link" href="https://wa.me/212649353007" target="_blank" rel="noopener">
+            +212 6 49 35 30 07
+          </a>
+        </div>
+
+        <div class="contact-line">
+          <span class="contact-label">Instagram:</span>
+          <a class="contact-link" href="https://www.instagram.com/lefaa_photography/" target="_blank" rel="noopener">
+            @lefaa_photography
+          </a>
+        </div>
+
+        <div class="contact-line">
+          <span class="contact-label">Location:</span>
+          <span>Safi • Rass Lefaa, Morocco & Tuscany, Italy</span>
+        </div>
+      </div>
+
+      <div style="margin-top: 16px;">
+        <span class="pill">Bookings</span>
+        <span class="pill">Brand Shoots</span>
+        <span class="pill">Surf Films</span>
+      </div>
     </div>
-
-    <div class="contact-line">
-      <span class="contact-label">WhatsApp (Morocco):</span>
-      <a class="contact-link" href="https://wa.me/212649353007" target="_blank" rel="noopener">
-        +212 6 49 35 30 07
-      </a>
-    </div>
-
-    <div class="contact-line">
-      <span class="contact-label">Instagram:</span>
-      <a class="contact-link"
-         href="https://www.instagram.com/lefaa_photography/"
-         target="_blank"
-         rel="noopener">
-        @lefaa_photography
-      </a>
-    </div>
-
-    <div class="contact-line">
-      <span class="contact-label">Location:</span>
-      <span>Safi • Rass Lefaa, Morocco & Tuscany, Italy</span>
-    </div>
-
-  <div style="margin-top: 16px;">
-    <span class="pill">Bookings</span>
-    <span class="pill">Brand Shoots</span>
-    <span class="pill">Surf Films</span>
   </div>
-</div>
+</section>
 
 </body>
 </html>
