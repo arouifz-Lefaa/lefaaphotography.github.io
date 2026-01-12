@@ -268,6 +268,7 @@
       box-shadow: 0 12px 26px rgba(0,0,0,0.25);
     }
 
+    /* IMPORTANT: no crop */
     figure.card img{
       width:100%;
       height:auto;
@@ -294,7 +295,7 @@
       font-size: 0.95rem;
     }
 
-    /* Section buttons */
+    /* Tabs */
     .section-tabs{
       display:flex;
       gap:10px;
@@ -316,7 +317,7 @@
     }
     .tablink:hover{ background: rgba(255,255,255,0.06); }
 
-    /* CONTACT (you had HTML, now styled + clean) */
+    /* CONTACT */
     .contact{
       padding: 70px 0 90px;
     }
@@ -394,7 +395,6 @@
     <div class="container">
       <div class="hero-stack">
         <div class="kicker">Safi • Rass Lefaa</div>
-
         <h1>Lefaa Photography <span class="a54">أ 54</span></h1>
 
         <div class="hero-video">
@@ -416,7 +416,7 @@
         <div class="meta">
           <span class="pill">Surf • Ocean Culture</span>
           <span class="pill">Photo + Film</span>
-          <span class="pill">Safi, Morocco Tuscany, Italy</span>
+          <span class="pill">Safi, Morocco • Tuscany, Italy</span>
         </div>
       </div>
     </div>
@@ -425,7 +425,7 @@
   <div class="scroll-hint">Scroll ↓</div>
 </header>
 
-<!-- How it started (Ali + Oussama) -->
+<!-- How it started -->
 <section class="feature">
   <div class="container feature-grid">
     <div class="feature-card">
@@ -443,11 +443,11 @@
   </div>
 </section>
 
-<!-- Oussama section -->
+<!-- Oussama (filename matches your repo) -->
 <section class="feature">
   <div class="container feature-grid">
     <div class="feature-card">
-      <img src="assets/Oussama.JPG" alt="Oussama — photographer and surfer from Safi">
+      <img src="assets/oussama%20aquaman.jpeg" alt="Oussama — photographer and surfer from Safi">
     </div>
 
     <div>
@@ -462,23 +462,22 @@
   </div>
 </section>
 
-<!-- Video section -->
+<!-- Video (valid HTML: figure + figcaption) -->
 <section class="feature">
   <div class="container feature-grid">
-    <div class="feature-card">
-      <video
-        src="assets/wavebarrel.mp4"
-        loop
-        controls
-        playsinline
-        preload="metadata">
+
+    <figure class="feature-card">
+      <video controls playsinline preload="metadata">
+        <source src="assets/wavebarrel.mp4" type="video/mp4">
+        Your browser can’t play this video.
+        <a href="assets/wavebarrel.mp4">Download it here</a>.
       </video>
 
       <figcaption>
         <div class="cap-title">Wave Barrel — Rass Lefaa</div>
         <div class="cap-sub">Sound on. The reef hums, the lip throws, and the tunnel closes behind you.</div>
       </figcaption>
-    </div>
+    </figure>
 
     <div>
       <div class="label">Film Moment</div>
@@ -488,9 +487,11 @@
         This is the sound of Safi when everything lines up.
       </p>
     </div>
+
   </div>
 </section>
 
+<!-- Story -->
 <section class="story">
   <div class="container story-grid">
     <p style="color: rgba(255,255,255,0.86); font-size: 1.02rem;">
@@ -505,25 +506,24 @@
   </div>
 </section>
 
-<!-- Section buttons -->
+<!-- Buttons (NO bodyboard) -->
 <section class="gallery" style="padding-bottom: 0;">
   <div class="container">
     <div class="gallery-head" style="margin-bottom: 10px;">
       <div>
         <h3>Galleries</h3>
-        <p>Choose a section — surf lines or bodyboard energy.</p>
+        <p>One curated surf set — then direct contact.</p>
       </div>
 
       <div class="section-tabs">
         <a class="tablink" href="#surf-gallery">🏄 Surf Gallery</a>
-        <a class="tablink" href="#bodyboard-gallery">🧍‍♂️ Bodyboard Gallery</a>
         <a class="tablink" href="#contact">📩 Contact</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Surf Gallery -->
+<!-- Surf Gallery (all filenames match your repo) -->
 <section class="gallery" id="surf-gallery">
   <div class="container">
     <div class="gallery-head">
@@ -543,7 +543,7 @@
       </figure>
 
       <figure class="card">
-        <img src="assets/Yellowwomen.JPG" alt="Surfer in yellow framed by the ocean">
+        <img src="assets/yellowwomen.JPG" alt="Surfer in yellow framed by the ocean">
         <figcaption>
           <div class="cap-title">Color in Motion</div>
           <div class="cap-sub">A single tone cutting through blue energy.</div>
@@ -559,7 +559,7 @@
       </figure>
 
       <figure class="card">
-        <img src="assets/tebaigirl.JPG" alt="Surfer girl reading the wave">
+        <img src="assets/tebaigirl.JPG" alt="Surfer reading the wave">
         <figcaption>
           <div class="cap-title">Reading the Line</div>
           <div class="cap-sub">Eyes forward, timing everything.</div>
@@ -567,40 +567,10 @@
       </figure>
 
       <figure class="card">
-        <img src="assets/DSC04824.JPG" alt="Surf moment captured at the peak">
+        <img src="assets/friends.jpeg" alt="Friends sharing a moment at Rass Lefaa">
         <figcaption>
-          <div class="cap-title">The Peak</div>
-          <div class="cap-sub">One decision — the wave answers.</div>
-        </figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<!-- Bodyboard Gallery (placeholders - rename files when you have them) -->
-<section class="gallery" id="bodyboard-gallery">
-  <div class="container">
-    <div class="gallery-head">
-      <div>
-        <h3>Bodyboard Gallery</h3>
-        <p>Close to the lip. Fast decisions. Pure impact.</p>
-      </div>
-    </div>
-
-    <div class="grid">
-      <figure class="card">
-        <img src="assets/bodyboard-1.jpg" alt="Bodyboard moment">
-        <figcaption>
-          <div class="cap-title">Drop & Drive</div>
-          <div class="cap-sub">The split-second where speed becomes control.</div>
-        </figcaption>
-      </figure>
-
-      <figure class="card">
-        <img src="assets/bodyboard-2.jpg" alt="Bodyboard barrel">
-        <figcaption>
-          <div class="cap-title">Under the Lip</div>
-          <div class="cap-sub">Low line, heavy water — still calm inside.</div>
+          <div class="cap-title">Before the Break</div>
+          <div class="cap-sub">That instant where instinct takes over and the ocean decides.</div>
         </figcaption>
       </figure>
     </div>
