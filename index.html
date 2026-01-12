@@ -36,223 +36,58 @@
       position: relative;
       min-height: 100vh;
       background: url("assets/wave-2.jpg") center / cover no-repeat;
-      overflow: hidden;
-    }
-
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(900px 520px at 18% 20%, rgba(0,0,0,0.55), transparent 70%),
-        linear-gradient(rgba(0,0,0,0.10), rgba(0,0,0,0.10));
-      pointer-events:none;
     }
 
     .topbar{
       position:absolute;
       top:0; left:0; right:0;
-      z-index: 3;
       padding: 18px 0;
     }
 
     .topbar-inner{
       display:flex;
-      justify-content: space-between;
+      justify-content: flex-end;
     }
 
     .logo{
-  width: 168px;        /* 112 × 1.5 */
-  height: 168px;       /* 112 × 1.5 */
-  object-fit: contain;
-  filter: drop-shadow(0 12px 20px rgba(0,0,0,0.42));
-  opacity: 0.85;       /* 15% transparent */
-}
-
+      width: 168px;
+      height: 168px;
+      object-fit: contain;
+      opacity: 0.85;
+    }
 
     .hero-content{
-      position: relative;
-      z-index: 2;
-      padding: 96px 0 56px 0;
-    }
-
-    .hero-stack{
-      max-width: 740px;
-    }
-
-    .kicker{
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 0.82rem;
-      opacity: 0.86;
-      margin-bottom: 12px;
+      padding: 140px 0 80px;
     }
 
     h1{
-      font-size: clamp(3.2rem, 7.5vw, 5.8rem);
-      line-height: 1;
+      font-size: clamp(3rem, 7vw, 5.5rem);
       letter-spacing: -0.05em;
-      white-space: nowrap;
       margin-bottom: 12px;
     }
 
     .a54{
-      font-size: 0.38em;
+      font-size: 0.4em;
       margin-left: 10px;
-      opacity: 0.9;
-      vertical-align: middle;
-      white-space: nowrap;
     }
 
-    /* VIDEO under title (bigger) */
-    .hero-video{
-      width: min(860px, 100%);
-      aspect-ratio: 16/9;
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      margin: 14px 0 16px 0;
-      box-shadow: var(--shadow);
-      background: rgba(0,0,0,0.25);
-    }
-
-    .hero-video video{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display:block;
-    }
-
-    .lead{
-      max-width: 64ch;
-      font-size: 1.08rem;
-      opacity: 0.9;
-      margin-bottom: 16px;
-    }
-
-    .meta{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .pill{
-      padding: 0.34rem 0.72rem;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(0,0,0,0.18);
-      font-size: 0.94rem;
-      backdrop-filter: blur(6px);
-    }
-
-    .scroll-hint{
-      position:absolute;
-      bottom: 18px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.9rem;
-      opacity: 0.8;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(0,0,0,0.18);
-      backdrop-filter: blur(6px);
-    }
-
-    /* FEATURE SECTIONS */
-    .feature{
-      padding: 72px 0;
-    }
-
-    .feature-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 26px;
-      align-items:center;
-    }
-
-    .feature-card{
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      background: var(--card);
-      box-shadow: var(--shadow);
-    }
-
-    .feature-card img{
-      width:100%;
-      height:520px;
-      object-fit: cover;
-      display:block;
-    }
-
-    /* ADDED: make videos inside feature-card behave like images (same look) */
-    .feature-card video{
-      width:100%;
-      height:520px;
-      object-fit: cover;
-      display:block;
-      background: rgba(0,0,0,0.25);
-    }
-
-    .label{
-      text-transform: uppercase;
-      font-size: 0.78rem;
-      letter-spacing: 0.14em;
-      opacity: 0.75;
-      margin-bottom: 10px;
-    }
-
-    .feature h2{
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
-
-    /* STORY */
-    .story{
-      padding: 60px 0;
-    }
-
-    .story-grid{
-      display:grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 24px;
-      align-items: start;
-    }
-
-    .quote{
-      border-left: 3px solid var(--border);
-      padding-left: 16px;
-      font-style: italic;
-      opacity: 0.9;
-    }
-
-    /* GALLERY (NO CROP, NO FILENAMES) */
+    /* GALLERY */
     .gallery{
-      padding: 60px 0 90px;
+      padding: 80px 0 110px;
     }
 
     .gallery-head{
-      display:flex;
-      align-items:end;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
       margin-bottom: 18px;
     }
 
     .gallery-head h3{
-      font-size: 1.35rem;
-      letter-spacing: -0.01em;
-      margin:0;
+      font-size: 1.4rem;
+      margin-bottom: 6px;
     }
 
     .gallery-head p{
-      margin:0;
-      color: rgba(255,255,255,0.78);
-      max-width: 62ch;
-      font-size: 0.98rem;
+      color: var(--muted);
+      max-width: 60ch;
     }
 
     .grid{
@@ -267,44 +102,34 @@
       overflow: hidden;
       border: 1px solid var(--border);
       background: rgba(255,255,255,0.03);
-      box-shadow: 0 12px 26px rgba(0,0,0,0.25);
     }
 
-    /* IMPORTANT: no fixed height, and contain = NO CROP */
     figure.card img{
       width:100%;
       height:auto;
-      object-fit: contain;
       display:block;
-      background: rgba(0,0,0,0.20);
+      background: rgba(0,0,0,0.2);
     }
 
     figcaption{
-      padding: 14px 14px 16px 14px;
+      padding: 14px;
       border-top: 1px solid rgba(255,255,255,0.08);
-      background: rgba(0,0,0,0.10);
-      backdrop-filter: blur(6px);
+      background: rgba(0,0,0,0.15);
     }
 
     .cap-title{
       font-weight: 600;
-      letter-spacing: -0.01em;
       margin-bottom: 4px;
     }
 
     .cap-sub{
-      color: rgba(255,255,255,0.76);
       font-size: 0.95rem;
+      color: rgba(255,255,255,0.75);
     }
 
     @media(max-width:900px){
-      .feature-grid,
-      .story-grid{ grid-template-columns:1fr; }
       figure.card{ grid-column: span 12; }
-      h1{ white-space: normal; }
-      .logo{ width: 92px; height: 92px; }
-      .hero-video{ width: 100%; }
-      .feature-card video{ height: auto; }
+      .logo{ width: 120px; height: 120px; }
     }
   </style>
 </head>
@@ -314,190 +139,39 @@
 <header class="hero">
   <div class="topbar">
     <div class="container topbar-inner">
-      <div></div>
       <img src="assets/logo.png" class="logo" alt="Lefaa logo">
     </div>
   </div>
 
-  <div class="hero-content">
-    <div class="container">
-      <div class="hero-stack">
-        <div class="kicker">Safi • Rass Lefaa</div>
-
-        <h1>Lefaa Photography <span class="a54">أ 54</span></h1>
-
-        <div class="hero-video">
-          <video
-            src="assets/wave%20intro.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata">
-          </video>
-        </div>
-
-        <p class="lead">
-          Surf photography & film driven by ocean culture.
-          We capture the rhythm of Rass Lefaa — the wave that pulls surfers from around the world to Safi.
-        </p>
-
-        <div class="meta">
-          <span class="pill">Surf • Ocean Culture</span>
-          <span class="pill">Photo + Film</span>
-          <span class="pill">Safi, Morocco Tuscany, Italy</span>
-        </div>
-      </div>
-    </div>
+  <div class="container hero-content">
+    <h1>Lefaa Photography <span class="a54">أ 54</span></h1>
   </div>
-
-  <div class="scroll-hint">Scroll ↓</div>
 </header>
 
-<!-- How it started (Ali + Oussama) -->
-<section class="feature">
-  <div class="container feature-grid">
-    <div class="feature-card">
-      <img src="assets/howitstarted.jpeg" alt="Ali & Oussama — how it started">
-    </div>
-
-    <div>
-      <div class="label">Ali & Oussama — Safi</div>
-      <h2>How it started: two surfers, one coastline, one vision.</h2>
-      <p style="color: rgba(255,255,255,0.86);">
-        Lefaa is built from shared mornings, salt on the skin, and years of learning the ocean’s timing.
-        Safi isn’t just where the story begins — it’s the rhythm inside every frame.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- Oussama section (kept) -->
-<section class="feature">
-  <div class="container feature-grid">
-    <div class="feature-card">
-      <img src="assets/Oussama.JPG" alt="Oussama — photographer and surfer from Safi">
-    </div>
-
-    <div>
-      <div class="label">The Photographer</div>
-      <h2>Oussama — surfer, filmmaker, and wave storyteller.</h2>
-      <p style="color: rgba(255,255,255,0.86);">
-        From Safi, shaped by salt and wind, Oussama captures the instant
-        where motion becomes memory — the breath before the drop, the spray in the sun,
-        the silence between sets.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ADDED: Wave Barrel video section (sound kept, looped) -->
-<section class="feature">
-  <div class="container feature-grid">
-    <div class="feature-card">
-      <video
-        src="assets/wavebarrel.mp4"
-        loop
-        controls
-        playsinline
-        preload="metadata">
-      </video>
-
-      <figcaption>
-        <div class="cap-title">Wave Barrel — Rass Lefaa</div>
-        <div class="cap-sub">Sound on. The reef hums, the lip throws, and the tunnel closes behind you.</div>
-      </figcaption>
-    </div>
-
-    <div>
-      <div class="label">Film Moment</div>
-      <h2>When the ocean turns into a room.</h2>
-      <p style="color: rgba(255,255,255,0.86);">
-        A barrel at Rass Lefaa isn’t just a wave — it’s pressure, rhythm, and trust.
-        This is the sound of Safi when everything lines up.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="story">
-  <div class="container story-grid">
-    <p style="color: rgba(255,255,255,0.86); font-size: 1.02rem;">
-      From Safi, shaped by salt and wind, Oussama and Ali are brothers by ocean and by soul.
-      Raised where waves carve stories into stone, they learned the sea is a language —
-      and a photograph is how you keep the feeling when the session is gone.
-    </p>
-
-    <div class="quote">
-      “Strong images come from strong rhythm — the ocean sets the pace.”
-    </div>
-  </div>
-</section>
-
-<!-- Gallery (FULL size, no cropping, creative surf captions) -->
+<!-- GALLERY -->
 <section class="gallery">
   <div class="container">
     <div class="gallery-head">
-      <div>
-        <h3>Gallery</h3>
-        <p>Not files. Not thumbnails. Real moments — kept exactly as they happened.</p>
-      </div>
+      <h3>Gallery</h3>
+      <p>Not files. Not thumbnails. Real moments — kept exactly as they happened.</p>
     </div>
 
     <div class="grid">
-      <!-- Put these FIRST (as you asked) -->
-      <figure cl
-<figure class="card">
-  <img src="assets/alidelphino.jpeg" alt="Ali diving into the wave at Rass Lefaa">
-  <figcaption>
-    <div class="cap-title">Before the Break</div>
-    <div class="cap-sub">
-      That instant where instinct takes over and the ocean decides.
+
+      <!-- FRIENDS IMAGE -->
+      <figure class="card">
+        <img src="assets/friends.jpg" alt="Friends sharing a moment in the wave at Rass Lefaa">
+        <figcaption>
+          <div class="cap-title">Before the Break</div>
+          <div class="cap-sub">
+            That instant where instinct takes over and the ocean decides.
+          </div>
+        </figcaption>
+      </figure>
+
     </div>
-  </figcaption>
-</figure>
-
-
-        <div class="contact-card">
-  <h3>Direct contact</h3>
-  <p>Fastest way: WhatsApp or Instagram DM.</p>
-
-  <div class="contact-meta">
-    <div class="contact-line">
-      <span class="contact-label">WhatsApp (Intl):</span>
-      <a class="contact-link" href="https://wa.me/393780627439" target="_blank" rel="noopener">
-        +39 378 062 7439
-      </a>
-    </div>
-
-    <div class="contact-line">
-      <span class="contact-label">WhatsApp (Morocco):</span>
-      <a class="contact-link" href="https://wa.me/212649353007" target="_blank" rel="noopener">
-        +212 6 49 35 30 07
-      </a>
-    </div>
-
-    <div class="contact-line">
-      <span class="contact-label">Instagram:</span>
-      <a class="contact-link"
-         href="https://www.instagram.com/lefaa_photography/"
-         target="_blank"
-         rel="noopener">
-        @lefaa_photography
-      </a>
-    </div>
-
-    <div class="contact-line">
-  <span class="contact-label">Location:</span>
-  <span>Safi • Rass Lefaa, Morocco & Tuscany, Italy</span>
-</div>
-
-
-  <div style="margin-top: 16px;">
-    <span class="pill">Bookings</span>
-    <span class="pill">Brand Shoots</span>
-    <span class="pill">Surf Films</span>
   </div>
-</div>
+</section>
 
-      
+</body>
+</html>
