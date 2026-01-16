@@ -13,7 +13,6 @@
     :root{
       --bg: #0b1b24;
       --text: rgba(255,255,255,0.95);
-      --muted: rgba(255,255,255,0.78);
       --border: rgba(255,255,255,0.14);
       --card: rgba(255,255,255,0.04);
       --shadow: 0 18px 40px rgba(0,0,0,0.35);
@@ -46,7 +45,6 @@
       background:
         radial-gradient(900px 520px at 18% 20%, rgba(0,0,0,0.55), transparent 70%),
         linear-gradient(rgba(0,0,0,0.10), rgba(0,0,0,0.10));
-      pointer-events:none;
     }
 
     .topbar{
@@ -72,12 +70,11 @@
     .hero-content{
       position: relative;
       z-index: 2;
-      padding: 110px 0 70px 0;
+      padding: 120px 0 70px;
     }
 
     .hero-stack{
-      display: flex;
-      flex-direction: column;
+      max-width: 100%;
     }
 
     .kicker{
@@ -92,8 +89,7 @@
       font-size: clamp(3.2rem, 7.5vw, 5.8rem);
       line-height: 1;
       letter-spacing: -0.05em;
-      white-space: nowrap;
-      margin-bottom: 0;
+      margin-bottom: 20px;
     }
 
     .a54{
@@ -103,23 +99,24 @@
       vertical-align: middle;
     }
 
-    /* HERO VIDEO – FIXED */
+    /* ✅ HERO VIDEO — FIXED */
     .hero-video{
-      width: min(980px, 100%);
-      aspect-ratio: 16/9;
+      max-width: 980px;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      margin: 40px auto 28px auto;
       border-radius: 20px;
       overflow: hidden;
       border: 1px solid var(--border);
-      margin: 42px auto 26px;
       box-shadow: 0 22px 50px rgba(0,0,0,0.45);
-      background: rgba(0,0,0,0.3);
+      background: #000;
     }
 
     .hero-video video{
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display:block;
+      display: block;
     }
 
     .lead{
@@ -141,7 +138,6 @@
       border: 1px solid var(--border);
       background: rgba(0,0,0,0.18);
       font-size: 0.94rem;
-      backdrop-filter: blur(6px);
     }
 
     .scroll-hint{
@@ -155,101 +151,61 @@
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,0.16);
       background: rgba(0,0,0,0.18);
-      backdrop-filter: blur(6px);
     }
 
-    /* FEATURE SECTIONS */
-    .feature{
-      padding: 72px 0;
+    @media(max-width:900px){
+      h1{ white-space: normal; }
+      .logo{ width: 92px; height: 92px; }
+      .hero-video{ margin-top: 30px; }
     }
+  </style>
+</head>
 
-    .feature-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 26px;
-      align-items:center;
-    }
+<body>
 
-    .feature-card{
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      background: var(--card);
-      box-shadow: var(--shadow);
-    }
+<header class="hero">
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div></div>
+      <img src="assets/logo.png" class="logo" alt="Lefaa logo">
+    </div>
+  </div>
 
-    .feature-card img,
-    .feature-card video{
-      width:100%;
-      height:520px;
-      object-fit: cover;
-      display:block;
-    }
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-stack">
 
-    .label{
-      text-transform: uppercase;
-      font-size: 0.78rem;
-      letter-spacing: 0.14em;
-      opacity: 0.75;
-      margin-bottom: 10px;
-    }
+        <div class="kicker">Safi • Rass Lefaa</div>
+        <h1>Lefaa Photography <span class="a54">أ 54</span></h1>
 
-    .feature h2{
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
+        <div class="hero-video">
+          <video
+            src="assets/wave%20intro.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata">
+          </video>
+        </div>
 
-    /* STORY */
-    .story{
-      padding: 60px 0;
-    }
+        <p class="lead">
+          Surf photography & film driven by ocean culture.
+          We capture the rhythm of Rass Lefaa — the wave that pulls surfers from around the world to Safi.
+        </p>
 
-    .story-grid{
-      display:grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 24px;
-    }
+        <div class="meta">
+          <span class="pill">Surf • Ocean Culture</span>
+          <span class="pill">Photo + Film</span>
+          <span class="pill">Safi, Morocco • Tuscany, Italy</span>
+        </div>
 
-    .quote{
-      border-left: 3px solid var(--border);
-      padding-left: 16px;
-      font-style: italic;
-      opacity: 0.9;
-    }
+      </div>
+    </div>
+  </div>
 
-    /* GALLERY */
-    .gallery{
-      padding: 60px 0 90px;
-    }
+  <div class="scroll-hint">Scroll ↓</div>
+</header>
 
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(12,1fr);
-      gap:18px;
-    }
-
-    figure.card{
-      grid-column: span 6;
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.03);
-      box-shadow: 0 12px 26px rgba(0,0,0,0.25);
-    }
-
-    figure.card img{
-      width:100%;
-      height:auto;
-      object-fit: contain;
-      display:block;
-      background: rgba(0,0,0,0.20);
-    }
-
-    figcaption{
-      padding: 14px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      background: rgba(0,0,0,0.10);
-    }
-
-    /* CONTA*
+</body>
+</html>
