@@ -31,6 +31,7 @@
       margin: 0 auto;
     }
 
+    /* HERO */
     .hero{
       position: relative;
       min-height: 100vh;
@@ -43,9 +44,21 @@
       position:absolute;
       inset:0;
       background:
-        radial-gradient(900px 520px at 18% 20%, rgba(0,0,0,0.55), transparent 70%),
-        linear-gradient(rgba(0,0,0,0.10), rgba(0,0,0,0.10));
+        radial-gradient(900px 520px at 18% 20%, rgba(0,0,0,0.65), transparent 70%),
+        linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25));
       pointer-events:none;
+      z-index:1;
+    }
+
+    /* ✅ NEW: full background video */
+    .hero-bg-video{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      opacity:0.35;
+      z-index:0;
     }
 
     .topbar{
@@ -102,24 +115,6 @@
       white-space: nowrap;
     }
 
-    .hero-video{
-      width: min(860px, 100%);
-      aspect-ratio: 16/9;
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      margin: 14px 0 16px 0;
-      box-shadow: var(--shadow);
-      background: rgba(0,0,0,0.25);
-    }
-
-    .hero-video video{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display:block;
-    }
-
     .lead{
       max-width: 64ch;
       font-size: 1.08rem;
@@ -154,6 +149,7 @@
       border: 1px solid rgba(255,255,255,0.16);
       background: rgba(0,0,0,0.18);
       backdrop-filter: blur(6px);
+      z-index:2;
     }
 
     .feature{
@@ -201,6 +197,17 @@
 <body>
 
 <header class="hero">
+  <!-- ✅ Background Video -->
+  <video
+    class="hero-bg-video"
+    src="assets/wave%20intro.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata">
+  </video>
+
   <div class="topbar">
     <div class="container topbar-inner">
       <div></div>
@@ -214,14 +221,16 @@
         <div class="kicker">Safi • Rass Lefaa</div>
         <h1>Lefaa Photography <span class="a54">أ 54</span></h1>
 
-        <div class="hero-video">
-          <video src="assets/wave%20intro.mp4" autoplay muted loop playsinline></video>
-        </div>
-
         <p class="lead">
           Surf photography & film driven by ocean culture.
           We capture the rhythm of Rass Lefaa — the wave that pulls surfers from around the world to Safi.
         </p>
+
+        <div class="meta">
+          <span class="pill">Surf • Ocean Culture</span>
+          <span class="pill">Photo + Film</span>
+          <span class="pill">Safi, Morocco • Tuscany, Italy</span>
+        </div>
       </div>
     </div>
   </div>
@@ -229,7 +238,7 @@
   <div class="scroll-hint">Scroll ↓</div>
 </header>
 
-<!-- Oussama section (ONLY image changed) -->
+<!-- Oussama section (unchanged) -->
 <section class="feature">
   <div class="container feature-grid">
     <div class="feature-card">
