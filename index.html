@@ -1,457 +1,209 @@
-/workspace/lefaaphotography.github.io$ /bin/bash -lc nl -ba index.html
-1	<!DOCTYPE html>
-     2	<html lang="en">
-     3	<head>
-     4	  <meta charset="UTF-8" />
-     5	  <title>Lefaa Photography أ 54</title>
-     6	  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     7	  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-     8	
-     9	  <style>
-    10	    *{margin:0;padding:0;box-sizing:border-box}
-    11	    html{scroll-behavior:smooth}
-    12	
-    13	    :root{
-    14	      --bg:#071118;
-    15	      --text:#f7f7f2;
-    16	      --muted:rgba(247,247,242,.68);
-    17	      --accent:#b8e1ff;
-    18	      --border:rgba(247,247,242,.12);
-    19	      --card:rgba(7,17,24,.65);
-    20	      --shadow:0 18px 40px rgba(0,0,0,.35);
-    21	    }
-    22	
-    23	    body{
-    24	      font-family:'Inter',sans-serif;
-    25	      background:var(--bg);
-    26	      color:var(--text);
-    27	      line-height:1.6;
-    28	    }
-    29	
-    30	    a{color:inherit;text-decoration:none}
-    31	    img{max-width:100%;display:block}
-    32	
-    33	    .container{width:min(1180px,92%);margin:0 auto}
-    34	
-    35	    header.hero{
-    36	      min-height:100vh;
-    37	      background:url("assets/hero.jpg.JPG") center/cover no-repeat;
-    38	      position:relative;
-    39	      display:flex;
-    40	      align-items:flex-end;
-    41	    }
-    42	
-    43	    header.hero::before{
-    44	      content:"";
-    45	      position:absolute;
-    46	      inset:0;
-    47	      background:linear-gradient(180deg,rgba(7,17,24,.25) 0%,rgba(7,17,24,.85) 65%,rgba(7,17,24,.95) 100%);
-    48	    }
-    49	
-    50	    .topbar{
-    51	      position:absolute;
-    52	      top:0;
-    53	      left:0;
-    54	      right:0;
-    55	      padding:18px 0;
-    56	      z-index:2;
-    57	    }
-    58	
-    59	    .topbar-inner{
-    60	      display:flex;
-    61	      align-items:center;
-    62	      justify-content:space-between;
-    63	      gap:24px;
-    64	    }
-    65	
-    66	    .logo{width:120px;opacity:.9}
-    67	
-    68	    .nav-links{
-    69	      display:flex;
-    70	      gap:24px;
-    71	      font-size:.95rem;
-    72	      letter-spacing:.04em;
-    73	      text-transform:uppercase;
-    74	      color:var(--muted);
-    75	    }
-    76	
-    77	    .nav-links a{padding-bottom:4px;border-bottom:1px solid transparent}
-    78	    .nav-links a:hover{border-color:var(--accent);color:var(--text)}
-    79	
-    80	    .hero-content{
-    81	      position:relative;
-    82	      z-index:2;
-    83	      padding:130px 0 90px;
-    84	      width:100%;
-    85	    }
-    86	
-    87	    .hero-grid{
-    88	      display:grid;
-    89	      grid-template-columns:repeat(12,1fr);
-    90	      gap:28px;
-    91	      align-items:end;
-    92	    }
-    93	
-    94	    .hero-copy{grid-column:span 7}
-    95	    .hero-media{grid-column:span 5}
-    96	
-    97	    h1{
-    98	      font-size:clamp(2.8rem,6vw,5.3rem);
-    99	      line-height:1.05;
-   100	      letter-spacing:-.04em;
-   101	      margin-bottom:18px;
-   102	    }
-   103	
-   104	    .a54{font-size:.35em;margin-left:10px}
-   105	
-   106	    .lead{
-   107	      max-width:58ch;
-   108	      color:var(--muted);
-   109	      margin-bottom:24px;
-   110	    }
-   111	
-   112	    .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
-   113	    .cta{
-   114	      display:inline-flex;
-   115	      align-items:center;
-   116	      gap:10px;
-   117	      padding:12px 24px;
-   118	      border-radius:999px;
-   119	      background:var(--text);
-   120	      color:#071118;
-   121	      font-weight:600;
-   122	    }
-   123	
-   124	    .cta.secondary{
-   125	      background:transparent;
-   126	      border:1px solid var(--border);
-   127	      color:var(--text);
-   128	    }
-   129	
-   130	    .hero-media{
-   131	      background:var(--card);
-   132	      border:1px solid var(--border);
-   133	      border-radius:18px;
-   134	      overflow:hidden;
-   135	      box-shadow:var(--shadow);
-   136	    }
-   137	
-   138	    .hero-media video{
-   139	      width:100%;
-   140	      height:100%;
-   141	      aspect-ratio:4/5;
-   142	      object-fit:cover;
-   143	    }
-   144	
-   145	    .scroll-note{
-   146	      display:flex;
-   147	      align-items:center;
-   148	      gap:10px;
-   149	      color:var(--muted);
-   150	      font-size:.9rem;
-   151	      margin-top:28px;
-   152	    }
-   153	
-   154	    .scroll-line{
-   155	      width:48px;
-   156	      height:1px;
-   157	      background:var(--muted);
-   158	      opacity:.6;
-   159	    }
-   160	
-   161	    section{padding:80px 0}
-   162	
-   163	    .intro{
-   164	      display:grid;
-   165	      grid-template-columns:repeat(12,1fr);
-   166	      gap:26px;
-   167	      align-items:center;
-   168	    }
-   169	
-   170	    .intro-text{grid-column:span 5}
-   171	    .intro-media{grid-column:span 7}
-   172	
-   173	    .eyebrow{
-   174	      text-transform:uppercase;
-   175	      letter-spacing:.25em;
-   176	      font-size:.78rem;
-   177	      color:var(--muted);
-   178	      margin-bottom:12px;
-   179	    }
-   180	
-   181	    h2{font-size:clamp(2rem,4vw,3.2rem);margin-bottom:18px}
-   182	
-   183	    .intro-media-grid{
-   184	      display:grid;
-   185	      grid-template-columns:repeat(2,1fr);
-   186	      gap:16px;
-   187	    }
-   188	
-   189	    .intro-card{
-   190	      border-radius:16px;
-   191	      overflow:hidden;
-   192	      border:1px solid var(--border);
-   193	      background:rgba(7,17,24,.7);
-   194	    }
-   195	
-   196	    .intro-card img{width:100%;height:100%;object-fit:cover}
-   197	
-   198	    .portfolio{
-   199	      background:linear-gradient(180deg,rgba(7,17,24,.95) 0%,rgba(7,17,24,.85) 100%);
-   200	    }
-   201	
-   202	    .portfolio-header{
-   203	      display:flex;
-   204	      flex-wrap:wrap;
-   205	      align-items:center;
-   206	      justify-content:space-between;
-   207	      gap:16px;
-   208	      margin-bottom:24px;
-   209	    }
-   210	
-   211	    .grid{
-   212	      display:grid;
-   213	      grid-template-columns:repeat(12,1fr);
-   214	      gap:18px;
-   215	    }
-   216	
-   217	    figure.card{
-   218	      grid-column:span 6;
-   219	      border-radius:18px;
-   220	      overflow:hidden;
-   221	      border:1px solid var(--border);
-   222	      background:rgba(7,17,24,.6);
-   223	      box-shadow:0 12px 26px rgba(0,0,0,.25);
-   224	    }
-   225	
-   226	    figure.card img{
-   227	      width:100%;
-   228	      height:100%;
-   229	      object-fit:cover;
-   230	      min-height:260px;
-   231	    }
-   232	
-   233	    figcaption{
-   234	      padding:14px 16px 18px;
-   235	      border-top:1px solid rgba(247,247,242,.08);
-   236	      background:rgba(0,0,0,.25);
-   237	    }
-   238	
-   239	    .cap-title{font-weight:600;margin-bottom:4px}
-   240	    .cap-sub{opacity:.78;font-size:.95rem}
-   241	
-   242	    .fullbleed{
-   243	      position:relative;
-   244	      margin-top:80px;
-   245	    }
-   246	
-   247	    .fullbleed img{
-   248	      width:100%;
-   249	      height:420px;
-   250	      object-fit:cover;
-   251	      border-radius:22px;
-   252	      border:1px solid var(--border);
-   253	      box-shadow:var(--shadow);
-   254	    }
-   255	
-   256	    footer{
-   257	      padding:40px 0 60px;
-   258	      color:var(--muted);
-   259	      font-size:.95rem;
-   260	    }
-   261	
-   262	    .footer-grid{
-   263	      display:flex;
-   264	      flex-wrap:wrap;
-   265	      justify-content:space-between;
-   266	      gap:18px;
-   267	      border-top:1px solid var(--border);
-   268	      padding-top:24px;
-   269	    }
-   270	
-   271	    .socials{display:flex;gap:18px}
-   272	
-   273	    @media(max-width:1000px){
-   274	      .hero-grid{grid-template-columns:1fr}
-   275	      .hero-copy,.hero-media{grid-column:1/-1}
-   276	      .hero-media video{aspect-ratio:16/9}
-   277	      .intro{grid-template-columns:1fr}
-   278	      .intro-text,.intro-media{grid-column:1/-1}
-   279	    }
-   280	
-   281	    @media(max-width:900px){
-   282	      figure.card{grid-column:span 12}
-   283	      .logo{width:90px}
-   284	      .nav-links{display:none}
-   285	    }
-   286	  </style>
-   287	</head>
-   288	
-   289	<body>
-   290	
-   291	<header class="hero" id="top">
-   292	  <div class="topbar">
-   293	    <div class="container topbar-inner">
-   294	      <img src="assets/logo.png" class="logo" alt="Lefaa logo">
-   295	      <nav class="nav-links">
-   296	        <a href="#portfolio">Portfolio</a>
-   297	        <a href="#stories">Stories</a>
-   298	        <a href="#contact">Contact</a>
-   299	      </nav>
-   300	    </div>
-   301	  </div>
-   302	
-   303	  <div class="hero-content">
-   304	    <div class="container hero-grid">
-   305	      <div class="hero-copy">
-   306	        <p class="eyebrow">Surf Photography</p>
-   307	        <h1>Lefaa Photography <span class="a54">أ 54</span></h1>
-   308	        <p class="lead">
-   309	          Inspired by the Atlantic swells of Safi, Lefaa captures the energy of Moroccan surf culture
-   310	          through cinematic stills and raw motion.
-   311	        </p>
-   312	        <div class="cta-row">
-   313	          <a class="cta" href="#portfolio">View the portfolio</a>
-   314	          <a class="cta secondary" href="#contact">Book a session</a>
-   315	        </div>
-   316	        <div class="scroll-note">
-   317	          <span class="scroll-line"></span>
-   318	          <span>Scroll for the surf stories</span>
-   319	        </div>
-   320	      </div>
-   321	      <div class="hero-media">
-   322	        <video src="assets/wave%20intro.mp4" autoplay muted loop playsinline></video>
-   323	      </div>
-   324	    </div>
-   325	  </div>
-   326	</header>
-   327	
-   328	<section class="intro" id="stories">
-   329	  <div class="container intro">
-   330	    <div class="intro-text">
-   331	      <p class="eyebrow">Between Sets</p>
-   332	      <h2>From dawn patrol to heavy-water barrels.</h2>
-   333	      <p class="lead">
-   334	        A visual journal of the surfers, shapers, and travelers who meet in Rass Lefaa. Every frame is
-   335	        handpicked to celebrate the pulse of the coast.
-   336	      </p>
-   337	      <p class="lead">
-   338	        Shoot schedules follow the tides, capturing light transitions and the moments between rides.
-   339	      </p>
-   340	    </div>
-   341	    <div class="intro-media">
-   342	      <div class="intro-media-grid">
-   343	        <div class="intro-card">
-   344	          <img src="assets/aliaquaman.jpeg" alt="Surfer portrait">
-   345	        </div>
-   346	        <div class="intro-card">
-   347	          <img src="assets/surf-lineup.jpg.JPG" alt="Surf lineup at Safi">
-   348	        </div>
-   349	        <div class="intro-card">
-   350	          <img src="assets/surf-barrel.jpg.JPG" alt="Wave barrel">
-   351	        </div>
-   352	        <div class="intro-card">
-   353	          <img src="assets/alohaali.jpeg" alt="Surfer on the reef">
-   354	        </div>
-   355	      </div>
-   356	    </div>
-   357	  </div>
-   358	</section>
-   359	
-   360	<section class="portfolio" id="portfolio">
-   361	  <div class="container">
-   362	    <div class="portfolio-header">
-   363	      <div>
-   364	        <p class="eyebrow">Portfolio</p>
-   365	        <h2>Surf Gallery</h2>
-   366	      </div>
-   367	      <p class="lead">Images from Lefaa, Safi, and the Atlantic coast — all shot on location.</p>
-   368	    </div>
-   369	
-   370	    <div class="grid">
-   371	      <figure class="card">
-   372	        <img src="assets/womensurf.JPG" alt="Woman surfing">
-   373	        <figcaption>
-   374	          <div class="cap-title">Flow State</div>
-   375	          <div class="cap-sub">Rass Lefaa — pure timing.</div>
-   376	        </figcaption>
-   377	      </figure>
-   378	
-   379	      <figure class="card">
-   380	        <img src="assets/yellowwomen.JPG" alt="Yellow surfer">
-   381	        <figcaption>
-   382	          <div class="cap-title">Color in Motion</div>
-   383	          <div class="cap-sub">A breath inside the barrel.</div>
-   384	        </figcaption>
-   385	      </figure>
-   386	
-   387	      <figure class="card">
-   388	        <img src="assets/superbarrel.JPG" alt="Super barrel">
-   389	        <figcaption>
-   390	          <div class="cap-title">Super Barrel</div>
-   391	          <div class="cap-sub">When the ocean opens a room.</div>
-   392	        </figcaption>
-   393	      </figure>
-   394	
-   395	      <figure class="card">
-   396	        <img src="assets/tebaigirl.JPG" alt="Reading the wave">
-   397	        <figcaption>
-   398	          <div class="cap-title">Reading the Line</div>
-   399	          <div class="cap-sub">Eyes forward. No noise.</div>
-   400	        </figcaption>
-   401	      </figure>
-   402	
-   403	      <figure class="card">
-   404	        <img src="assets/friends.jpeg" alt="Friends at Lefaa">
-   405	        <figcaption>
-   406	          <div class="cap-title">Before the Break</div>
-   407	          <div class="cap-sub">Instinct takes over.</div>
-   408	        </figcaption>
-   409	      </figure>
-   410	
-   411	      <figure class="card">
-   412	        <img src="assets/air%20rollo%20max%20.JPG" alt="Air rollo at Rass Lefaa">
-   413	        <figcaption>
-   414	          <div class="cap-title">Air Rollo Max</div>
-   415	          <div class="cap-sub">Full release above the lip.</div>
-   416	        </figcaption>
-   417	      </figure>
-   418	
-   419	      <figure class="card">
-   420	        <img src="assets/snap%20lefaa%20.JPG" alt="Snap turn at Lefaa">
-   421	        <figcaption>
-   422	          <div class="cap-title">Snap at Lefaa</div>
-   423	          <div class="cap-sub">Sharp turn on living reef.</div>
-   424	        </figcaption>
-   425	      </figure>
-   426	
-   427	      <figure class="card">
-   428	        <img src="assets/chmat%20.JPG" alt="Heavy surf charge">
-   429	        <figcaption>
-   430	          <div class="cap-title">Chmat</div>
-   431	          <div class="cap-sub">No fear. Heavy water.</div>
-   432	        </figcaption>
-   433	      </figure>
-   434	    </div>
-   435	
-   436	    <div class="fullbleed">
-   437	      <img src="assets/BIGWAVESAFI.jpeg" alt="Big wave at Safi">
-   438	    </div>
-   439	  </div>
-   440	</section>
-   441	
-   442	<footer id="contact">
-   443	  <div class="container footer-grid">
-   444	    <div>
-   445	      <strong>Lefaa Photography أ 54</strong>
-   446	      <p>Surf photography & film — Safi, Morocco.</p>
-   447	    </div>
-   448	    <div class="socials">
-   449	      <a href="mailto:hello@lefaaphotography.com">hello@lefaaphotography.com</a>
-   450	      <a href="#top">Back to top</a>
-   451	    </div>
-   452	  </div>
-   453	</footer>
-   454	
-   455	</body>
-   456	</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lefaa Photography أ 54</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    :root{
+      --bg:#0b1b24;
+      --text:rgba(255,255,255,.95);
+      --border:rgba(255,255,255,.14);
+      --card:rgba(255,255,255,.04);
+      --shadow:0 18px 40px rgba(0,0,0,.35);
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    .container{width:min(1120px,92%);margin:0 auto}
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      background:url("assets/wave-2.jpg") center/cover no-repeat;
+      position:relative;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(900px 520px at 18% 20%,rgba(0,0,0,.55),transparent 70%);
+    }
+
+    .topbar{position:absolute;top:0;left:0;right:0;padding:18px 0;z-index:2}
+    .topbar-inner{display:flex;justify-content:flex-end}
+    .logo{width:120px;opacity:.85}
+
+    .hero-content{position:relative;z-index:2;padding:120px 0 60px}
+    h1{
+      font-size:clamp(3rem,7vw,5.6rem);
+      line-height:1;
+      letter-spacing:-.05em;
+      margin-bottom:14px;
+    }
+    .a54{font-size:.38em;margin-left:10px}
+
+    .hero-video{
+      width:min(860px,100%);
+      aspect-ratio:16/9;
+      border-radius:18px;
+      overflow:hidden;
+      margin:20px 0;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+    }
+    .hero-video video{width:100%;height:100%;object-fit:cover}
+
+    .lead{max-width:65ch;opacity:.9;margin-bottom:14px}
+
+    /* GALLERY */
+    .gallery{padding:70px 0}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:18px;
+    }
+    figure.card{
+      grid-column:span 6;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      box-shadow:0 12px 26px rgba(0,0,0,.25);
+    }
+    figure.card img{
+      width:100%;
+      height:auto;
+      object-fit:contain;
+      background:rgba(0,0,0,.25);
+      display:block;
+    }
+    figcaption{
+      padding:14px;
+      border-top:1px solid rgba(255,255,255,.08);
+      background:rgba(0,0,0,.12);
+    }
+    .cap-title{font-weight:600;margin-bottom:4px}
+    .cap-sub{opacity:.78;font-size:.95rem}
+
+    @media(max-width:900px){
+      figure.card{grid-column:span 12}
+      .logo{width:90px}
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <img src="assets/logo.png" class="logo" alt="Lefaa logo">
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <div class="container">
+      <h1>Lefaa Photography <span class="a54">أ 54</span></h1>
+
+      <div class="hero-video">
+        <video src="assets/wave%20intro.mp4" autoplay muted loop playsinline></video>
+      </div>
+
+      <p class="lead">
+        Surf photography & film driven by ocean culture.
+        From Safi — Rass Lefaa.
+      </p>
+    </div>
+  </div>
+</header>
+
+<!-- SURF GALLERY -->
+<section class="gallery" id="surf-gallery">
+  <div class="container">
+    <h2 style="margin-bottom:18px">Surf Gallery</h2>
+
+    <div class="grid">
+
+      <!-- ORIGINAL -->
+      <figure class="card">
+        <img src="assets/womensurf.JPG" alt="Woman surfing">
+        <figcaption>
+          <div class="cap-title">Flow State</div>
+          <div class="cap-sub">Rass Lefaa — pure timing.</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="assets/yellowwomen.JPG" alt="Yellow surfer">
+        <figcaption>
+          <div class="cap-title">Color in Motion</div>
+          <div class="cap-sub">A breath inside the barrel.</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="assets/superbarrel.JPG" alt="Super barrel">
+        <figcaption>
+          <div class="cap-title">Super Barrel</div>
+          <div class="cap-sub">When the ocean opens a room.</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="assets/tebaigirl.JPG" alt="Reading the wave">
+        <figcaption>
+          <div class="cap-title">Reading the Line</div>
+          <div class="cap-sub">Eyes forward. No noise.</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="assets/friends.jpeg" alt="Friends at Lefaa">
+        <figcaption>
+          <div class="cap-title">Before the Break</div>
+          <div class="cap-sub">Instinct takes over.</div>
+        </figcaption>
+      </figure>
+
+      <!-- ✅ NEW IMAGES -->
+      <figure class="card">
+        <img src="assets/air%20rollo%20max.JPG" alt="Air rollo at Rass Lefaa">
+        <figcaption>
+          <div class="cap-title">Air Rollo Max</div>
+          <div class="cap-sub">Full release above the lip.</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="assets/snap%20lefaa.JPG" alt="Snap turn at Lefaa">
+        <figcaption>
+          <div class="cap-title">Snap at Lefaa</div>
+          <div class="cap-sub">Sharp turn on living reef.</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="assets/chmat .JPG" alt="Heavy surf charge">
+        <figcaption>
+          <div class="cap-title">Chmat</div>
+          <div class="cap-sub">No fear. Heavy water.</div>
+        </figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
