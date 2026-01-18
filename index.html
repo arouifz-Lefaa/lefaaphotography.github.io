@@ -39,7 +39,7 @@
       background: var(--bg);
     }
 
-    /* ✅ NEW: fullscreen background video (bigger) */
+    /* Fullscreen background video */
     .hero-bg-video{
       position:absolute;
       inset:0;
@@ -50,7 +50,6 @@
       z-index:0;
     }
 
-    /* Overlay (kept same idea, slightly stronger so text stays readable on video) */
     .hero::before{
       content:"";
       position:absolute;
@@ -114,26 +113,6 @@
       opacity: 0.9;
       vertical-align: middle;
       white-space: nowrap;
-    }
-
-    /* ✅ REMOVED hero-video box styling from layout by keeping the class but not using it here.
-       (We are not deleting anything else; we simply won’t render the boxed video element.) */
-    .hero-video{
-      width: min(860px, 100%);
-      aspect-ratio: 16/9;
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      margin: 14px 0 16px 0;
-      box-shadow: var(--shadow);
-      background: rgba(0,0,0,0.25);
-    }
-
-    .hero-video video{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display:block;
     }
 
     .lead{
@@ -283,6 +262,7 @@
       box-shadow: 0 12px 26px rgba(0,0,0,0.25);
     }
 
+    /* IMPORTANT: no crop */
     figure.card img{
       width:100%;
       height:auto;
@@ -388,7 +368,6 @@
       figure.card{ grid-column: span 12; }
       h1{ white-space: normal; }
       .logo{ width: 92px; height: 92px; }
-      .hero-video{ width: 100%; }
       .feature-card video{ height: auto; }
       .contact-label{ min-width: auto; }
     }
@@ -398,7 +377,6 @@
 <body>
 
 <header class="hero">
-  <!-- ✅ NEW: Fullscreen background video (bigger) -->
   <video
     class="hero-bg-video"
     src="assets/wave%20intro.mp4"
@@ -422,11 +400,11 @@
         <div class="kicker">Safi • Rass Lefaa</div>
         <h1>Lefaa Photography <span class="a54">أ 54</span></h1>
 
-        <!-- ✅ Removed the boxed hero-video element (video is now background) -->
-
+        <!-- ✅ Updated homepage text -->
         <p class="lead">
-          Surf photography & film driven by ocean culture.
-          We capture the rhythm of Rass Lefaa — the wave that pulls surfers from around the world to Safi.
+          Lefaa Team is a professional collective of photographers and filmmakers, born at Rass Lefaa and now working internationally.
+          We collaborate with refined events, brands, and private clients, delivering elegant, cinematic imagery with precision, discretion,
+          and a strong sense of storytelling.
         </p>
 
         <div class="meta">
@@ -641,4 +619,3 @@
 
 </body>
 </html>
-
