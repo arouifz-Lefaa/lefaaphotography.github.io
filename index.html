@@ -7,14 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    figure.card video{
-  width: 100%;
-  height: auto;
-  display: block;
-  background: rgba(0,0,0,0.20);
-}
-
-  
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
@@ -38,19 +30,6 @@
       width: min(1120px, 92%);
       margin: 0 auto;
     }
-/* Bigger cinematic video section */
-.video-wide{
-  grid-column: span 12; /* full width */
-}
-
-.video-wide video{
-  width: 100%;
-  height: 70vh;
-  object-fit: cover;
-  border-radius: 18px;
-  display: block;
-  background: #000;
-}
 
     /* HERO */
     .hero{
@@ -60,7 +39,6 @@
       background: var(--bg);
     }
 
-    /* Fullscreen background video */
     .hero-bg-video{
       position:absolute;
       inset:0;
@@ -283,12 +261,20 @@
       box-shadow: 0 12px 26px rgba(0,0,0,0.25);
     }
 
-    /* IMPORTANT: no crop */
+    /* IMPORTANT: no crop for images */
     figure.card img{
       width:100%;
       height:auto;
       object-fit: contain;
       display:block;
+      background: rgba(0,0,0,0.20);
+    }
+
+    /* Default card video */
+    figure.card video{
+      width: 100%;
+      height: auto;
+      display: block;
       background: rgba(0,0,0,0.20);
     }
 
@@ -331,6 +317,19 @@
       backdrop-filter: blur(6px);
     }
     .tablink:hover{ background: rgba(255,255,255,0.06); }
+
+    /* Cinematic full-width videos */
+    .video-wide{
+      grid-column: span 12;
+    }
+    .video-wide video{
+      width: 100%;
+      height: 75vh;
+      object-fit: cover;
+      border-radius: 18px;
+      display: block;
+      background: #000;
+    }
 
     /* CONTACT */
     .contact{
@@ -391,6 +390,7 @@
       .logo{ width: 92px; height: 92px; }
       .feature-card video{ height: auto; }
       .contact-label{ min-width: auto; }
+      .video-wide video{ height: 52vh; }
     }
   </style>
 </head>
@@ -421,7 +421,6 @@
         <div class="kicker">Safi • Rass Lefaa</div>
         <h1>Lefaa Photography <span class="a54">أ 54</span></h1>
 
-        <!-- ✅ Updated homepage text -->
         <p class="lead">
           Lefaa Team is a professional collective of photographers and filmmakers, born at Rass Lefaa and now working internationally.
           We collaborate with refined events, brands, and private clients, delivering elegant, cinematic imagery with precision, discretion,
@@ -477,7 +476,7 @@
   </div>
 </section>
 
-<!-- Video (valid HTML: figure + figcaption) -->
+<!-- Video (feature) -->
 <section class="feature">
   <div class="container feature-grid">
 
@@ -485,7 +484,6 @@
       <video controls playsinline preload="metadata">
         <source src="assets/wavebarrel.mp4" type="video/mp4">
         Your browser can’t play this video.
-        <a href="assets/wavebarrel.mp4">Download it here</a>.
       </video>
 
       <figcaption>
@@ -521,7 +519,7 @@
   </div>
 </section>
 
-<!-- Buttons (NO bodyboard) -->
+<!-- Buttons -->
 <section class="gallery" style="padding-bottom: 0;">
   <div class="container">
     <div class="gallery-head" style="margin-bottom: 10px;">
@@ -532,6 +530,8 @@
 
       <div class="section-tabs">
         <a class="tablink" href="#surf-gallery">🏄 Surf Gallery</a>
+        <a class="tablink" href="#full-assets-gallery">🖼️ Full Archive</a>
+        <a class="tablink" href="#frames-motion">🎬 Motion</a>
         <a class="tablink" href="#contact">📩 Contact</a>
       </div>
     </div>
@@ -553,8 +553,7 @@
         <img src="assets/womensurf.JPG" alt="Woman surfing a clean line">
         <figcaption>
           <div class="cap-title">Flow State</div>
-          <div class="cap-sub">Rass Lefaa Barrel
-                               Heavy water, clean lines, no noise. In Safi, the barrel isn’t chased it arrives when timing is earned.</div>
+          <div class="cap-sub">Heavy water, clean lines, no noise. In Safi, timing is earned.</div>
         </figcaption>
       </figure>
 
@@ -562,8 +561,7 @@
         <img src="assets/yellowwomen.JPG" alt="Surfer in yellow framed by the ocean">
         <figcaption>
           <div class="cap-title">Color in Motion</div>
-          <div class="cap-sub">Safi, Morocco
-                               A moment carved in moving stone. The barrel breathes, and for a second, so do you..</div>
+          <div class="cap-sub">A moment carved in moving stone. The barrel breathes — and for a second, so do you.</div>
         </figcaption>
       </figure>
 
@@ -579,7 +577,7 @@
         <img src="assets/tebaigirl.JPG" alt="Surfer reading the wave">
         <figcaption>
           <div class="cap-title">Reading the Line</div>
-          <div class="cap-sub">Eyes forward, Atlantic Geometry Curves drawn by pressure, measured only by courage and calm.timing everything.</div>
+          <div class="cap-sub">Eyes forward — Atlantic geometry measured by calm and courage.</div>
         </figcaption>
       </figure>
 
@@ -593,8 +591,8 @@
     </div>
   </div>
 </section>
-<!-- FULL ASSETS GALLERY (exact filenames) -->
-<!-- FULL ASSETS GALLERY (with surf captions) -->
+
+<!-- Full Archive -->
 <section class="gallery" id="full-assets-gallery">
   <div class="container">
     <div class="gallery-head">
@@ -626,44 +624,117 @@
         <img src="assets/Body%20board%20flip.png" alt="Body board flip.png">
         <figcaption>
           <div class="cap-title">Bodyboard Rotation</div>
-          <div class="cap-sub">When speed becomes lift and the oce
-<!-- Feature Video Section -->
-<section class="feature">
-  <div class="container feature-grid">
+          <div class="cap-sub">When speed becomes lift and the ocean lets you fly.</div>
+        </figcaption>
+      </figure>
 
-    <figure class="feature-card">
-      <video controls playsinline preload="metadata">
-       <source src="assets/035f0bed-46e2-41c5-80ad-6de39f19d09c.mp4" type="video/mp4">
+      <figure class="card">
+        <img src="assets/DSC04824.JPG" alt="DSC04824.JPG">
+        <figcaption>
+          <div class="cap-title">Between Sets</div>
+          <div class="cap-sub">Salt in the air, patience in the lineup.</div>
+        </figcaption>
+      </figure>
 
-        Your browser does not support the video tag.
-      </video>
+      <figure class="card">
+        <img src="assets/aliaquaman.jpeg" alt="aliaquaman.jpeg">
+        <figcaption>
+          <div class="cap-title">Aquaman</div>
+          <div class="cap-sub">Comfort underwater is earned, not learned.</div>
+        </figcaption>
+      </figure>
 
-      <figcaption>
-        <div class="cap-title">Frames — Motion</div>
-        <div class="cap-sub">A moving frame from Rass Lefaa — timing, pressure, and Atlantic rhythm.</div>
-      </figcaption>
-    </figure>
+      <figure class="card">
+        <img src="assets/alidolphino.jpeg" alt="alidolphino.jpeg">
+        <figcaption>
+          <div class="cap-title">Dolphin Exit</div>
+          <div class="cap-sub">One motion, one breath, one clean escape.</div>
+        </figcaption>
+      </figure>
 
-    <div>
-      <div class="label">Video Frame</div>
-      <h2>When the frame starts moving.</h2>
-      <p style="color: rgba(255,255,255,0.86);">
-        Motion adds another layer to the story.  
-        Same reef, same timing — just extended in time.
-      </p>
+      <figure class="card">
+        <img src="assets/alohaali.jpeg" alt="alohaali.jpeg">
+        <figcaption>
+          <div class="cap-title">Aloha Energy</div>
+          <div class="cap-sub">Joy, salt, and a board under the arm.</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="assets/back%20flip%20.JPG" alt="back flip .JPG">
+        <figcaption>
+          <div class="cap-title">Back Flip</div>
+          <div class="cap-sub">Timing meets confidence above the lip.</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="assets/chmat%20.JPG" alt="chmat .JPG">
+        <figcaption>
+          <div class="cap-title">Chmat</div>
+          <div class="cap-sub">Raw style — just water and instinct.</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="assets/hero.jpg.JPG" alt="hero.jpg.JPG">
+        <figcaption>
+          <div class="cap-title">Atlantic Mood</div>
+          <div class="cap-sub">The ocean sets the tone before sunrise.</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="assets/snap%20lefaa%20.JPG" alt="snap lefaa .JPG">
+        <figcaption>
+          <div class="cap-title">Snap Lefaa</div>
+          <div class="cap-sub">Quick hands, fast shutter, heavy water.</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="assets/surf-barrel.jpg.JPG" alt="surf-barrel.jpg.JPG">
+        <figcaption>
+          <div class="cap-title">Inside the Tunnel</div>
+          <div class="cap-sub">Pressure, sound, and total focus.</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="assets/surf-lineup.jpg.JPG" alt="surf-lineup.jpg.JPG">
+        <figcaption>
+          <div class="cap-title">The Lineup</div>
+          <div class="cap-sub">Reading sets before they reveal themselves.</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="assets/surf-paddling.jpg.JPG" alt="surf-paddling.jpg.JPG">
+        <figcaption>
+          <div class="cap-title">Paddle Out</div>
+          <div class="cap-sub">Every wave earned starts here.</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="assets/wave-2.jpg" alt="wave-2.jpg">
+        <figcaption>
+          <div class="cap-title">Wave Energy</div>
+          <div class="cap-sub">Atlantic power rolling without pause.</div>
+        </figcaption>
+      </figure>
+
     </div>
-
   </div>
 </section>
-<!-- Frames — Motion Videos (loop + mute) -->
-<!-- Frames — Motion Videos (loop + mute) -->
+
 <!-- Frames — Motion (Cinematic Videos) -->
 <section class="gallery" id="frames-motion">
   <div class="container">
     <div class="gallery-head">
       <div>
         <h3>Frames — Motion</h3>
-        <p>Moving frames from the Atlantic — rhythm, pressure, and timing.</p>
+        <p>Looped motion — muted, cinematic, and full width.</p>
       </div>
     </div>
 
@@ -716,6 +787,26 @@
         <figcaption>
           <div class="cap-title">Last Light</div>
           <div class="cap-sub">When the ocean slows and the session fades.</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card video-wide">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="assets/SnapInsta.to_AQMhfXUCtm4CmFXO5Mg51_Xsl33xOWJZ2qeubrvF9e7i3chSnaEINTmgZ7ITjSh-UegFNoPn1tkvksSaQ4rHqN8BuDZhtBqXRBkvXWk.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+          <div class="cap-title">Heavy Section</div>
+          <div class="cap-sub">Speed builds, the reef waits — no hesitation.</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card video-wide">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="assets/SnapInsta.to_AQPJmpY21PgnlU1pR_Dv5WPApMHl3gF22-JjKvTtb6n-3-hb-msaroNhgKTemrGc5cUil2llugXcSup-xCQYWGWxGG7bbXOVPnYdj-c.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+          <div class="cap-title">Final Light</div>
+          <div class="cap-sub">Last wave, last breath — when the ocean goes quiet.</div>
         </figcaption>
       </figure>
 
